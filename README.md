@@ -18,7 +18,7 @@ noot noot -
 \nani,\??? -
          recieve a corresponding meme containing an inquisitive fellow
          
-here come dat <insert word> -
+here come dat [insert word] -
          oh shit waddup!
          
 \d4 -
@@ -48,7 +48,7 @@ oh hot damn, o hot damn -
 \squeesh -
          generates a random squeesh face. kyuuuuuun! (> v <
          
-\js <code> -
+\js [code] -
          execute as much javascript as can fit in one line. ganbatte!
          
 \cmdpls,\cmdspls -
@@ -60,14 +60,14 @@ oh hot damn, o hot damn -
 \jam -
          queue up some strawberry jam (use \joinvoice first!)
          
-\loop <times> <url/keywords> -
+\loop [times] [url/keywords] -
          loops the given url the given number of times. (requires "lilybot Admin") (use \joinvoice first!)
          
 \kaomoji -
          generates a random kaomoji/lenny
          
-\pickanumber,\pickanumber <number> -
+\pickanumber,\pickanumber [number] -
          starts a new number game, picking a number between 1 and <number>. If no <number> is specified then lilybot will default to 100.
          
-\guess <number> -
+\guess [number] -
          places a guess of <number> towards the number game.
