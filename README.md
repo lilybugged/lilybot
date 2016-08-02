@@ -71,7 +71,7 @@ oh hot damn, o hot damn -
          generates a random kaomoji/lenny
          
 \pickanumber,\pickanumber [number] -
-         starts a new number game, picking a number between 1 and <number>. If no <number> is specified then lilybot will default to 100.
+         starts a new number game, picking a number between 1 and [number]. If no [number] is specified then lilybot will default to 100.
          
 \guess [number] -
-         places a guess of <number> towards the number game.
+         places a guess of [number] towards the number game.
