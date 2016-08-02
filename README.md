@@ -1,6 +1,8 @@
 # lilybot
 A discord bot written from scratch, utilizing Discord.js and Node.js
 
+*some commands require that the server also uses the separate "discoid" bot*
+
 ---- cmdspls ----
 
 ready?,are you ready, kids?,i can't hear you! -
