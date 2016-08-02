@@ -4,6 +4,7 @@ A discord bot written from scratch, utilizing Discord.js and Node.js
 *some commands require that the server also uses the separate "discoid" bot*
 
 Connect lilybot to your server here: https://discordapp.com/oauth2/authorize?client_id=209507647039340544&scope=bot
+
 ---- cmdspls ----
 
 ready?,are you ready, kids?,i can't hear you! -
