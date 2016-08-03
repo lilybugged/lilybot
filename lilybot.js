@@ -39,7 +39,7 @@ bot.on("message",function(message){
 	}
 	if ((d = new Date()).getHours() == 5 || (d = new Date()).getHours() == 17){
 		done420 = false;
-	}
+	} 
 	//!4:20
 	if (message.content.toLowerCase().includes("ready?")){
 		//var contains = false;
