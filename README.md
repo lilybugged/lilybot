@@ -110,4 +110,4 @@ There is no auth link for this; you need to individually set it up for it to wor
 
 **my mind's tellin me no**		BUT MY BODY
 
-**my body's telin me yes**		triggers the 'bump and grind' video (use \joinvoice first!)
+**my body's tellin me yes**		triggers the 'bump and grind' video (use \joinvoice first!)
