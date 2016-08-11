@@ -1,4 +1,6 @@
 # lilybot
+
+![alt tag](http://i.imgur.com/SRFmCSV.png)
 A discord bot written from scratch, utilizing Discord.js and Node.js
 
 *some commands require that the server also uses the separate "discoid" bot*
