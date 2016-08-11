@@ -1,6 +1,6 @@
 # lilybot
 
-![alt tag](http://i.imgur.com/2mA6Za5.png)
+![alt tag](http://i.imgur.com/1bP8leP.png)
 
 
 A discord bot written from scratch, utilizing Discord.js and Node.js
