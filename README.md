@@ -43,7 +43,7 @@ Connect lilybot to your server here: https://discordapp.com/oauth2/authorize?cli
 
 "**\\squeesh**				generates a random squeesh face. kyuuuuuun! (> v <\n"
 
-"**\\js <code>**			execute as much javascript as can fit in one line. ganbatte!\n"
+"**\\js < code >**			execute as much javascript as can fit in one line. ganbatte!\n"
 
 "**\\cmdpls,\\cmdspls**			get commands for lilybot\n"
 
