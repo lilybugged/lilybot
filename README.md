@@ -77,9 +77,10 @@ There is no auth link for this; you need to individually set it up for it to wor
 **\\clearboard**			clears the tic-tac-toe board
 
 **\\place** <1-9> <x/o>		places a tic-tac-toe piece. The spots on the board are numbered as follows:
-					:one::two::three:
-					:four::five::six:
-					:seven::eight::nine:
+
+:one::two::three:
+:four::five::six:
+:seven::eight::nine:
 
 **\\floob**				floob at the rest of the server in one of many different ways
 
