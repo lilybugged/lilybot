@@ -25,85 +25,86 @@ There is no auth link for this; you need to individually set it up for it to wor
 
 ---- cmdspls ----
 
-"**ready?, are you ready, kids?,**	invites a corresponding response from lilybot\n"
-
+**ready?, are you ready, kids?,**	invites a corresponding response from lilybot
 **i can't hear you!**			
 
-"**good morning, good evening**		invites a corresponding response from lilybot, in Japanese\n"
+**good morning, good evening**		invites a corresponding response from lilybot, in Japanese
 
-"**ty**					be welcomed\n"
+**ty**					be welcomed
 
-"**noot noot**				be nooted in return\n"
+**noot noot**				be nooted in return
 
-"**\\nani,\\\\???**			recieve a corresponding meme of one inquisitive fellow\n"
+**\\nani,\\\\???**			recieve a corresponding meme of one inquisitive fellow
 
-"**here come dat <insert word>**	oh shit waddup!\n"
+**here come dat <insert word>**	"oh shit waddup!"
 
-"**\\d4**				??\n"
+**\\d4**				??
 
-"**kms, kys**				invites lilybot to agree heartily\n"
+**kms, kys**				invites lilybot to agree heartily
 
-"**\\lenny**				( ͡° ͜ʖ ͡°)\n"
+**\\lenny**				( ͡° ͜ʖ ͡°)
 
-"**ping**				pong!\n"
+**ping**				pong!
 
-"**???**				???\n"
+**???**				???
 
-"**oh hot reservoir, o hot reservoir**	invites lilybot to finish the meme\n"
+**oh hot reservoir, o hot reservoir**	invites lilybot to finish the meme
 
-"**oh hot damn, o hot damn**		STRAAAWBERRRY JAAAAAAAAAAM (make sure you join the audio channel using \joinvoice first!)\n"
+**oh hot damn, o hot damn**		STRAAAWBERRRY JAAAAAAAAAAM (make sure you join the audio channel using \joinvoice first!)
 
-"**\\jump**				what? jumping isn't allowed gtfo\n"
+**\\jump**				what? jumping isn't allowed gtfo
 
-"**\\squeesh**				generates a random squeesh face. kyuuuuuun! (> v <\n"
+**\\squeesh**				generates a random squeesh face. kyuuuuuun! (> v <
 
-"**\\js < code >**			execute as much javascript as can fit in one line. ganbatte!\n"
+**\\js < code >**			execute as much javascript as can fit in one line. ganbatte!
 
-"**\\cmdpls,\\cmdspls**			get commands for lilybot\n"
+**\\cmdpls,\\cmdspls**			get commands for lilybot
 
-"**\\joinvoice**			tells lilybot to join the first voice channel in the server\n"
+**\\joinvoice**			tells lilybot to join the first voice channel in the server
 
-"**\\jam**				queue up some strawberry jam (use \\joinvoice first!)\n"
+**\\jam**				queue up some strawberry jam (use \\joinvoice first!)
 
-"**\\loop <times> <url/keywords>**	loops the given url the given number of times. (requires \"lilybot Admin\") (use \\joinvoice 						first!)\n"
+**\\loop <times> <url/keywords>**	loops the given url the given number of times. (requires \"lilybot Admin\") (use \\joinvoice 						first!)
 
-"**\\kaomoji**				generates a random kaomoji/lenny\n"
+**\\kaomoji**				generates a random kaomoji/lenny
 
-"**\\pickanumber,\\pickanumber <number>** starts a new number game, picking a number between 1 and <number>. If no <number> is 							specified then lilybot will default to 100.\n"
+**\\pickanumber,\\pickanumber <number>** starts a new number game, picking a number between 1 and <number>. If no <number> is 							specified then lilybot will default to 100.
 
-"**\\guess <number>**			places a guess of <number> towards the number game."
+**\\guess <number>**			places a guess of <number> towards the number game
 
-"**marco**				polo!\n"
+**marco**				polo!\n"
 
-"**\\clearboard**			clears the tic-tac-toe board\n"
+**\\clearboard**			clears the tic-tac-toe board
 
-"**\\place** <1-9> <x/o>		places a tic-tac-toe piece. The spots on the board are numbered as follows:\n"
-					"\t\t:one::two::three:\n\t\t:four::five::six:\n\t\t:seven::eight::nine:\n"
+**\\place** <1-9> <x/o>		places a tic-tac-toe piece. The spots on the board are numbered as follows:
+					:one::two::three:
+					:four::five::six:
+					:seven::eight::nine:
 
-"**\\floob**				floob at the rest of the server in one of many different ways\n"
+**\\floob**				floob at the rest of the server in one of many different ways
 
-"**\\reload**				reload the gun used for Russian Roulette\n"
+**\\reload**				reload the gun used for Russian Roulette
 
-"**\\rr**				Russian Roulette! Spin the 6-chamber revolver and take a shot. If you die, you reload the gun 					automatically.\n"
+**\\rr**				Russian Roulette! Spin the 6-chamber revolver and take a shot. If you die, you reload the gun 					automatically.
 
-"**\\datboi, \\herecomedatboi**		tells lilybot to deliver a fresh gif of DAT BOI\n"
+**\\datboi, \\herecomedatboi**		tells lilybot to deliver a fresh gif of DAT BOI
 
-"**\\em**				emote in a nicely formatted manner\n"
+**\\em**				emote in a nicely formatted manner
 
-"**\\airhorn <1/2>**			plays one of two different airhorn sounds (use \\joinvoice first!)\n"
+**\\airhorn <1/2>**			plays one of two different airhorn sounds (use \\joinvoice first!)
 
-"**\\kms**				kill yourself.\n"
+**\\kms**				kill yourself.
 
-"**\\rek <user>**			reks the given user in one of many ways\n"
+**\\rek <user>**			reks the given user in one of many ways
 
-"**\\doot**				invites lilybot to respond with a colorful and relative message\n"
+**\\doot**				invites lilybot to respond with a colorful and relative message
 
-"**\\gj**				inserts a certain gif from NGL\n"
+**\\gj**				inserts a certain gif from NGL
 
-"**\\ogj**				OMEGAGOODJOB\n"
+**\\ogj**				OMEGAGOODJOB
 
-"**confirm/deny**			include this to get an answer from lilybot\n"
+**confirm/deny**			include this to get an answer from lilybot
 
-"**my mind's tellin me no**		BUT MY BODY"
+**my mind's tellin me no**		BUT MY BODY
 
-"**my body's telin me yes**		triggers the 'bump and grind' video (use \joinvoice first!)\n"
+**my body's telin me yes**		triggers the 'bump and grind' video (use \joinvoice first!)
