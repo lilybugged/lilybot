@@ -25,8 +25,7 @@ There is no auth link for this; you need to individually set it up for it to wor
 
 ---- cmdspls ----
 
-**ready?, are you ready, kids?,**	invites a corresponding response from lilybot
-**i can't hear you!**			
+**ready?; are you ready, kids?; i can't hear you!**	invites a corresponding response from lilybot
 
 **good morning, good evening**		invites a corresponding response from lilybot, in Japanese
 
