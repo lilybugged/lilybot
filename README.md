@@ -2,9 +2,9 @@
 
 ![alt tag](http://i.imgur.com/1bP8leP.png)
 
-TYPE "\cmdspls" FOR A LIST OF COMMANDS
-
 A discord bot written from scratch, utilizing Discord.js and Node.js
+
+TYPE "\cmdspls" FOR A LIST OF COMMANDS
 
 *some commands require that the server also uses the separate "discoid" bot*
 
