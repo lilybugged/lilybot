@@ -68,6 +68,9 @@ bot.on("message",function(message){
 		bot.setStatus("online", "type \\cmdspls", function(){});
 		bot.setAvatar("C:\Users\lilia\Desktop\lilbot.png", function(){});
 	}
+	if (message.content.toLowerCase()===("\\hue")){
+		bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=SHo9IJYaylQ");
+	}
 	if (message.content.toLowerCase()===("\\r'amen")&&message.author.id==="176021596325150720"){
 		bot.sendFile(message, "https://static3.fjcdn.com/comments/R+amen+my+brother+_dc14bd6d200fb416c558123f7d1e7d2d.jpg");
 	}
@@ -121,7 +124,7 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("\\gj"))
 		bot.sendFile(message, (message, "http://i.imgur.com/YHw1yW5.gif"));
 	else if (message.content.toLowerCase()===("\\ogj"))
-		bot.sendMessage(message, (message, ".music play https://www.youtube.com/watch?v=U0kaAl5v0AA"));
+		bot.sendMessage(message, (message, "\\play https://www.youtube.com/watch?v=U0kaAl5v0AA"));
 	else if (message.content.toLowerCase().substring(0,3)===("\\em")){
 		var ms = (message, "```"+message.author.name.toUpperCase().substring(0,1)+message.author.name.substring(1)+message.content.substring(3)+
 	((message.content.substring(message.content.length-1)==="."||message.content.substring(message.content.length-1)==="?"||message.content.substring(message.content.length-1)==="!")? "":".")+"```");
@@ -142,15 +145,20 @@ bot.on("message",function(message){
 	}
 	else if ((message.content.toLowerCase()===("\\airhorn")||message.content.toLowerCase()===("\\airhorn 1"))){
 		if (message.author.hasRole(message.channel.server.roles.get("name","lilybot Admin"))){
-			bot.sendMessage(message, ".music play https://www.youtube.com/watch?v=QVw5mnRI8Zw");
+			bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=QVw5mnRI8Zw");
 		}
 		else bot.reply(message, "git gud. Your don't have the permissions to execute this command.");
 	}
 	else if (message.content.toLowerCase()===("\\airhorn 2")){
 		if (message.author.hasRole(message.channel.server.roles.get("name","lilybot Admin"))){
-			bot.sendMessage(message, ".music play https://www.youtube.com/watch?v=a_6CZ2JaEuc");
+			bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=a_6CZ2JaEuc");
 		}
 		else bot.reply(message, "git gud. Your don't have the permissions to execute this command.");
+	}
+	else if (message.content.toLowerCase().substring(0,8)==="\\nowplay"){
+		message.author.game = bot.user.game;
+		//message.author.game.name = message.content.substring(9);
+		bot.reply(message,"k");
 	}
 	else if (message.content.toLowerCase().includes("good evening")){
 		switch (Math.floor(Math.random()*2)){
@@ -173,7 +181,7 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase().includes("my mind's tellin")&&message.content.toLowerCase().includes("me no"))
 		bot.sendMessage(message, "BUT MY BODY");
 	else if (message.content.toLowerCase().includes("my bo")&&message.content.toLowerCase().includes("dy's tellin")&&message.content.toLowerCase().includes("me y"))
-		bot.sendMessage(message, ".music play https://www.youtube.com/watch?v=gTXGL0xPyLA");
+		bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=gTXGL0xPyLA");
 	else if (message.content.toLowerCase().includes("here come dat"))
 		bot.sendMessage(message, "oh shit waddup!");
 	else if (message.content.toLowerCase().includes("\\datboi")||message.content.toLowerCase().includes("\\herecomedatboi"))
@@ -284,7 +292,7 @@ bot.on("message",function(message){
 		bot.sendMessage(message, ":trumpet: doot :trumpet: doot :trumpet: doot :trumpet: ");
 	else if (message.content.toLowerCase().includes(("oh hot damn"))||message.content.toLowerCase().includes(("o hot damn"))){
 		bot.reply(message, "STRAAAWBERRRY JAAAAAAAAAAM");
-		bot.sendMessage(message, ".music play https://www.youtube.com/watch?v=6pQdBaFfHjs");
+		bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=6pQdBaFfHjs");
 	}
 	else if (message.content.toLowerCase()==="\\jump"){
 		var jump = Math.floor(Math.random()*4);
@@ -416,7 +424,7 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase()===("\\jam")){
 		bot.reply(message, "STRAAAWBERRRY JAAAAAAAAAAM");
-		bot.sendMessage(message, ".music play https://www.youtube.com/watch?v=6pQdBaFfHjs");
+		bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=6pQdBaFfHjs");
 	}
 	else if (message.content.toLowerCase()===("\\reload")){
 		bot.sendMessage(message, message.author.name+" has loaded the gun!");
@@ -438,7 +446,7 @@ bot.on("message",function(message){
 			splitted.shift();
 			splitted.shift();
 			setInterval(function () {
-				bot.sendMessage(message,".music play "+splitted.join(" ")); 
+				bot.sendMessage(message,"\\play "+splitted.join(" ")); 
 				count++;
 				if (count>=times){
 					bot.reply(message, "Your loop has completed.");
