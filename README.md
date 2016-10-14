@@ -8,7 +8,9 @@ TYPE "\cmdspls" FOR A LIST OF COMMANDS
 
 *some commands require that the server also uses the separate "discoid" bot*
 
-There is no auth link for this; you need to individually set it up for it to work:
+I ain't hostin' this, therefore there is no auth link.
+
+Set up locally as follows:
 
 1. go to "my applications" on discord's site and create an application (you can use the icon above as the avatar)
 2. save changes and then click "add bot user"
