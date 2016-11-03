@@ -14,6 +14,7 @@ loader = "lilybot";
 msg = "";
 
 //@lilybot#1942
+bot.loginWithToken("Bot MjEzNDE0MDU1NDk3NDMzMDg4.Co6E1w.jI4-3ES-9m1ZcC2vyOE0mpSd51U");
 
 bot.on("message",function(message){
 	//declare shortcut functions
@@ -746,7 +747,7 @@ bot.on("message",function(message){
 	
 });
 
-bot.loginWithToken("Bot MjEzNDE0MDU1NDk3NDMzMDg4.Co6E1w.jI4-3ES-9m1ZcC2vyOE0mpSd51U");
+
 
 function error(e) {
 	console.log(e.stack);
