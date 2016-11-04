@@ -34,7 +34,6 @@ bot.on("message",function(message){
 	/*function cmd(m){
 		// where "m" is the message to send - this deletes the sent message so only a command meant for another bot is executed
 		var temp = message.channel.sendMessage(m);
-		//bot.user.deleteMessage(temp);
 	}*/
 	//define winner
 	winner = function(which){
@@ -132,7 +131,7 @@ bot.on("message",function(message){
 	((message.content.substring(message.content.length-1)==="."||message.content.substring(message.content.length-1)==="?"||message.content.substring(message.content.length-1)==="!")? "":".")+"```");
 		//ms = ms.replace("");
 		message.channel.sendMessage( ms);
-		bot.user.deleteMessage(message);
+		message.delete();
 	}
 	else if (message.content.toLowerCase()===("\\milkshake")){
 		if (message.author.id==="194691144981020673"){
@@ -283,7 +282,7 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("ping"))
 		message.channel.sendMessage( "pong");
 	else if (message.content.toLowerCase()===("\\???")){
-		///bot.user.deleteMessage(message);
+		///message.delete();
 		message.channel.sendFile( "http://i2.kym-cdn.com/entries/icons/original/000/018/489/nick-young-confused-face-300x256_nqlyaa.png");
 	}
 	else if (message.content.toLowerCase().includes("\\nani"))
@@ -358,7 +357,7 @@ bot.on("message",function(message){
 		}
 	}
 	else if (message.content.substring(0,3)=="\\js"){
-		bot.user.deleteMessage(message);
+		message.delete();
 		eval(message.content.substring(3));
 	}
 	else if (message.content.toLowerCase()===("\\cmdpls")||message.content.toLowerCase()===("\\cmdspls")){
