@@ -363,7 +363,7 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase()===("\\cmdpls")||message.content.toLowerCase()===("\\cmdspls")){
 		//message.reply( "have sum cmds");
-		message.author.sendMessage(message.author, "**ready?,are you ready, kids?,i can't hear you!** -\n\t\t invites a corresponding response from lilybot\n"
+		message.author.sendMessage("**ready?,are you ready, kids?,i can't hear you!** -\n\t\t invites a corresponding response from lilybot\n"
 		+ "**good morning, good evening** -\n\t\t invites a corresponding response from lilybot, in Japanese\n"
 		+ "**ty** -\n\t\t be welcomed\n"
 		+ "**noot noot** -\n\t\t be nooted in return\n"
