@@ -68,7 +68,7 @@ bot.on("message",function(message){
 		message.reply( "Ready!");
 		bot.setStatus("online");
 		bot.setGame("type \\cmdspls");
-		bot.setAvatar("C:\Users\lilia\Desktop\lilbot.png", function(){});
+		//bot.setAvatar("C:\Users\lilia\Desktop\lilbot.png", function(){});
 	}
 	if (message.content.toLowerCase()===("\\hue")){
 		bot.sendMessage(message, "\\play https://www.youtube.com/watch?v=SHo9IJYaylQ");
