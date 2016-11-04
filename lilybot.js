@@ -66,7 +66,7 @@ bot.on("message",function(message){
 	if (message.content.toLowerCase()===("ready?")){
 		//var contains = false;
 		message.reply( "Ready!");
-		bot.setStatus("online");
+		//bot.setStatus("online");
 		bot.setGame("type \\cmdspls");
 		//bot.setAvatar("C:\Users\lilia\Desktop\lilbot.png", function(){});
 	}
