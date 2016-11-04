@@ -1,7 +1,7 @@
 var Discord = require("discord.js");
 var fs = require ("fs")
 var bot = new Discord.Client();
-servernumbers = [[0,"NootKnights",0],[0,"Chill Zone",0]];
+servernumbers = [[0,"Ye Olde Nyerd Basket",0],[0,"Chill Zone",0]];
 serverboards = [[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]];
 //servercheckers = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
 server_last = [0,0];
@@ -39,7 +39,7 @@ bot.on("message",function(message){
 	//define winner
 	winner = function(which){
 		var id = 0;
-		if (message.server.name==="NootKnights") id = 0;
+		if (message.guild.name==="Ye Olde Nyerd Basket") id = 0;
 		else id = 1;
 		
 		for (i=0;i<3;i++){
@@ -146,13 +146,13 @@ bot.on("message",function(message){
 		else message.reply( "am sorry but who died an made u the milkshake queen");
 	}
 	else if ((message.content.toLowerCase()===("\\airhorn")||message.content.toLowerCase()===("\\airhorn 1"))){
-		if (message.author.hasRole(message.channel.server.roles.get("name","lilybot Admin"))){
+		if (message.author.hasRole(message.channel.guild.roles.get("name","lilybot Admin"))){
 			bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=QVw5mnRI8Zw");
 		}
 		else message.reply( "git gud. Your don't have the permissions to execute this command.");
 	}
 	else if (message.content.toLowerCase()===("\\airhorn 2")){
-		if (message.author.hasRole(message.channel.server.roles.get("name","lilybot Admin"))){
+		if (message.author.hasRole(message.guild.roles.get("name","lilybot Admin"))){
 			bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=a_6CZ2JaEuc");
 		}
 		else message.reply( "git gud. Your don't have the permissions to execute this command.");
@@ -410,7 +410,7 @@ bot.on("message",function(message){
 		//message.reply( msg);
 	}
 	else if (message.content.toLowerCase()==="\\joinvoice"){
-		for (var channel of message.channel.server.channels) {
+		for (var channel of message.guild.channels) {
 			// If the channel is a voice channel, ...
 			if (channel instanceof Discord.VoiceChannel && channel===message.author.voiceChannel) {
 				// ... reply with the channel name and the ID ...
@@ -442,7 +442,7 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase().substring(0,5)===("\\loop")){
 		var splitted = message.content.toLowerCase().split(" ");
-		if (message.author.hasRole(message.channel.server.roles.get("name","lilybot Admin"))&&!isNaN(splitted[1])){
+		if (message.author.hasRole(message.guild.roles.get("name","lilybot Admin"))&&!isNaN(splitted[1])){
 			var count = 0;
 			var times = splitted[1];
 			splitted.shift();
@@ -514,7 +514,7 @@ bot.on("message",function(message){
 		
 	//NUMBER GAME!
 	else if (message.content.toLowerCase().substring(0,12)===("\\pickanumber")){
-		if (message.server.name==="NootKnights") {
+		if (message.guild.name==="Ye Olde Nyerd Basket") {
 			if (message.content.length===12) servernumbers[0][0] = Math.floor(Math.random()*100)+1;
 			else servernumbers[0][0] = Math.floor(Math.random()*parseInt(message.content.toLowerCase().substring(12)))+1;
 			servernumbers[0][2] = 0;
@@ -533,7 +533,7 @@ bot.on("message",function(message){
 		message.reply( "stop ur cheatin");
 	}
 	else if ((!isNaN(message.content.toLowerCase().substring(6)))&&message.content.toLowerCase().substring(0,6)===("\\guess")&&message.content.toLowerCase()!=("\\guess \\guess")&&(message.content.toLowerCase()!=("\\guess nan"))){
-		if (message.server.name==="NootKnights") {
+		if (message.guild.name==="Ye Olde Nyerd Basket") {
 			if (servernumbers[0][0]!=0){
 				var guess = parseInt(message.content.toLowerCase().substring(7));
 				servernumbers[0][2]++;
@@ -581,7 +581,7 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("\\clearboard")){
 		win = false;
 		var id = 0;
-		if (message.server.name==="NootKnights") id = 0;
+		if (message.guild.name==="Ye Olde Nyerd Basket") id = 0;
 		else id = 1;
 		
 		for (i=0;i<3;i++){
@@ -597,7 +597,7 @@ bot.on("message",function(message){
 		win = false;
 		var i=0;
 		var id = 0;
-		if (message.server.name==="NootKnights") id = 0;
+		if (message.guild.name==="Ye Olde Nyerd Basket") id = 0;
 		else id = 1;
 		
 		var mess = message.content.split(" ");
@@ -718,7 +718,7 @@ bot.on("message",function(message){
 				}
 				if (gotten==9){
 					var id = 0;
-					if (message.server.name==="NootKnights") id = 0;
+					if (message.guild.name==="Ye Olde Nyerd Basket") id = 0;
 					else id = 1;
 					
 					for (i=0;i<3;i++){
