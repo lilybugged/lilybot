@@ -391,7 +391,7 @@ bot.on("message",function(message){
 		+ "**\\place** <1-9> <x/o> -\n\t\t places a tic-tac-toe piece. The spots on the board are numbered as follows:\n"
 		+ "\t\t:one::two::three:\n\t\t:four::five::six:\n\t\t:seven::eight::nine:\n"
 		);
-		bot.user.sendMessage(message.author, "**\\floob** -\n\t\t floob at the rest of the server in one of many different ways\n"
+		message.author.sendMessage("**\\floob** -\n\t\t floob at the rest of the server in one of many different ways\n"
 		+ "**\\reload** -\n\t\t reload the gun used for Russian Roulette\n"
 		+ "**\\rr** -\n\t\t Russian Roulette! Spin the 6-chamber revolver and take a shot. If you die, you reload the gun automatically.\n"
 		+ "**\\datboi, \\herecomedatboi** -\n\t\t tells lilybot to deliver a fresh gif of DAT BOI\n"
