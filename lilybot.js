@@ -20,20 +20,20 @@ bot.on("message",function(message){
 	//declare shortcut functions
 	function loop(m,n){
 		for(i=0;i<n;i++){ 
-			bot.user.sendMessage(message, m);
+			message.channel.sendMessage(m);
 		}
 	}
 	function send(m){
 		// where "m" is the message to send
-		bot.user.sendMessage(message,m);
+		message.channel.sendMessage(m);
 	}
 	function tts(m){
 		// where "m" is the message to send
-		bot.user.sendTTSMessage(message,m);
+		message.channel.sendTTSMessage(m);
 	}
 	/*function cmd(m){
 		// where "m" is the message to send - this deletes the sent message so only a command meant for another bot is executed
-		var temp = bot.user.sendMessage(message,m);
+		var temp = message.channel.sendMessage(m);
 		//bot.user.deleteMessage(temp);
 	}*/
 	//define winner
@@ -54,8 +54,8 @@ bot.on("message",function(message){
 	//4:20
 	if (((d = new Date()).getHours() == 4 && (d = new Date()).getMinutes() == 20) || ((d = new Date()).getHours() == 16 && (d = new Date()).getMinutes() == 20)){
 		if (!done420){
-			bot.user.sendMessage(message, "it be 4:20");
-			bot.user.sendFile(message, "http://comps.canstockphoto.com/can-stock-photo_csp13177268.jpg");
+			message.channel.sendMessage( "it be 4:20");
+			message.channel.sendFile( "http://comps.canstockphoto.com/can-stock-photo_csp13177268.jpg");
 			done420 = true;	
 		}
 	}
@@ -65,36 +65,36 @@ bot.on("message",function(message){
 	//!4:20
 	if (message.content.toLowerCase()===("ready?")){
 		//var contains = false;
-		message.reply( "Ready!");
+		message.reply("Ready!");
 		bot.user.setStatus("online");
 		bot.user.setGame("type \\cmdspls");
 		//bot.user.setAvatar("C:\Users\lilia\Desktop\lilbot.user.png", function(){});
 	}
 	if (message.content.toLowerCase()===("\\hue")){
-		bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=SHo9IJYaylQ");
+		message.channel.sendMessage( "\\play https://www.youtube.com/watch?v=SHo9IJYaylQ");
 	}
 	if (message.content.toLowerCase()===("\\r'amen")&&message.author.id==="176021596325150720"){
-		bot.user.sendFile(message, "https://static3.fjcdn.com/comments/R+amen+my+brother+_dc14bd6d200fb416c558123f7d1e7d2d.jpg");
+		message.channel.sendFile( "https://static3.fjcdn.com/comments/R+amen+my+brother+_dc14bd6d200fb416c558123f7d1e7d2d.jpg");
 	}
 	if ((message.content.toLowerCase()===("\\prayer")||message.content.toLowerCase()===("\\ourpasta")||message.content.toLowerCase()===("\\ourpastawhoartinacolander"))&&message.author.id==="176021596325150720"){
-		bot.user.sendMessage(message, "Our pasta, who art in a colander,\nDraining be your noodles.\nThy noodle come,\nThy sauce be yum,\nOn top some grated parmesan.\nGive us this day our garlic bread,\nAnd forgive us our trespasses,\nAs we forgive those who trample on our lawns.\nAnd lead us not into vegetarianism, but deliver us some pizza,\nFor thine is the meatball, the noodle, and the sauce, forever and ever.\n-R’Amen.");
+		message.channel.sendMessage( "Our pasta, who art in a colander,\nDraining be your noodles.\nThy noodle come,\nThy sauce be yum,\nOn top some grated parmesan.\nGive us this day our garlic bread,\nAnd forgive us our trespasses,\nAs we forgive those who trample on our lawns.\nAnd lead us not into vegetarianism, but deliver us some pizza,\nFor thine is the meatball, the noodle, and the sauce, forever and ever.\n-R’Amen.");
 	}
 	else if (message.content.toLowerCase().includes("are you ready"))
 		message.reply( "Aye aye, Captain!");
 	else if (message.content.toLowerCase().includes("i can't hear you"))
 		message.reply( "AYE AYE CAPTAIN");
 	else if (message.content.toLowerCase().includes("good morning"))
-		bot.user.sendMessage(message, "ohayou gozaimasu");
+		message.channel.sendMessage( "ohayou gozaimasu");
 	else if (message.content===("MARCO"))
-		bot.user.sendMessage(message, "POLO, MOTHERFUCKER");
+		message.channel.sendMessage( "POLO, MOTHERFUCKER");
 	else if (message.content.toLowerCase()===("marco"))
-		bot.user.sendMessage(message, "polo");
+		message.channel.sendMessage( "polo");
 	else if (message.content.toLowerCase().includes("confirm/deny"))
-		bot.user.sendMessage(message, (Math.floor(Math.random()*2)===1)? "confirm":"deny");
+		message.channel.sendMessage( (Math.floor(Math.random()*2)===1)? "confirm":"deny");
 	else if (message.content.toLowerCase()===("ggg"))
-		bot.user.sendTTSMessage(message, (message, "get good giles"));
+		message.channel.sendTTSMessage( (message, "get good giles"));
 	else if (message.content.toLowerCase()===("ggl"))
-		bot.user.sendTTSMessage(message, (message, "get good lily"));
+		message.channel.sendTTSMessage( (message, "get good lily"));
 	else if (message.content.toLowerCase()===("\\jadensmith")){
 		var jaden = ["I Watch Twilight Every Night",
 		"I Will Always Give You The Truth I Will Never Lie To You In My music If You Cant Handle My Feelings And Emotions Please Unfollow Me",
@@ -121,39 +121,39 @@ bot.on("message",function(message){
 		"People Think A RelationShip Makes You Whole, That It's Two 50%'s Coming Together To Make 100% When It Should Be Two 100%'s Making 200%•••",
 		"If I Die In My Flannel Will You Write My Poems On Tyler's 5 Panels And Jesusus Sandals This Plane Is Just To Much To Handle."
 		];
-		bot.user.sendMessage(message, "\""+jaden[Math.floor(Math.random()*jaden.length)]+"\" - Jaden Smith");
+		message.channel.sendMessage( "\""+jaden[Math.floor(Math.random()*jaden.length)]+"\" - Jaden Smith");
 	}
 	else if (message.content.toLowerCase()===("\\gj"))
-		bot.user.sendFile(message, (message, "http://i.imgur.com/YHw1yW5.gif"));
+		message.channel.sendFile( (message, "http://i.imgur.com/YHw1yW5.gif"));
 	else if (message.content.toLowerCase()===("\\ogj"))
-		bot.user.sendMessage(message, (message, "\\play https://www.youtube.com/watch?v=U0kaAl5v0AA"));
+		message.channel.sendMessage( (message, "\\play https://www.youtube.com/watch?v=U0kaAl5v0AA"));
 	else if (message.content.toLowerCase().substring(0,3)===("\\em")){
 		var ms = (message, "```"+message.author.name.toUpperCase().substring(0,1)+message.author.name.substring(1)+message.content.substring(3)+
 	((message.content.substring(message.content.length-1)==="."||message.content.substring(message.content.length-1)==="?"||message.content.substring(message.content.length-1)==="!")? "":".")+"```");
 		//ms = ms.replace("");
-		bot.user.sendMessage(message, ms);
+		message.channel.sendMessage( ms);
 		bot.user.deleteMessage(message);
 	}
 	else if (message.content.toLowerCase()===("\\milkshake")){
 		if (message.author.id==="194691144981020673"){
 			if (Math.floor(Math.random()*100)===7){
 				message.reply( "u got the rare milkshake it is big look");
-				bot.user.sendFile(message, "http://www.chick-fil-a.com/Media/Img/catalog/Food/XLarge/Chocolate-Milkshake.png");
+				message.channel.sendFile( "http://www.chick-fil-a.com/Media/Img/catalog/Food/XLarge/Chocolate-Milkshake.png");
 			}
 			message.reply( "here's ur milkshake gdi");
-			bot.user.sendFile(message, "http://urbantastebuds.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/mcdonalds-Vanilla-McCafe-Shake-12-fl-oz-cup-1.png");
+			message.channel.sendFile( "http://urbantastebuds.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/mcdonalds-Vanilla-McCafe-Shake-12-fl-oz-cup-1.png");
 		}
 		else message.reply( "am sorry but who died an made u the milkshake queen");
 	}
 	else if ((message.content.toLowerCase()===("\\airhorn")||message.content.toLowerCase()===("\\airhorn 1"))){
 		if (message.author.hasRole(message.channel.guild.roles.get("name","lilybot Admin"))){
-			bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=QVw5mnRI8Zw");
+			message.channel.sendMessage( "\\play https://www.youtube.com/watch?v=QVw5mnRI8Zw");
 		}
 		else message.reply( "git gud. Your don't have the permissions to execute this command.");
 	}
 	else if (message.content.toLowerCase()===("\\airhorn 2")){
 		if (message.author.hasRole(message.guild.roles.get("name","lilybot Admin"))){
-			bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=a_6CZ2JaEuc");
+			message.channel.sendMessage( "\\play https://www.youtube.com/watch?v=a_6CZ2JaEuc");
 		}
 		else message.reply( "git gud. Your don't have the permissions to execute this command.");
 	}
@@ -164,40 +164,40 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase().includes("good evening")){
 		switch (Math.floor(Math.random()*2)){
-			case 0: bot.user.sendTTSMessage(message, "(cone ban wa)");
+			case 0: message.channel.sendTTSMessage( "(cone ban wa)");
 			break;
-			case 1: bot.user.sendMessage(message, "konbanwa");
+			case 1: message.channel.sendMessage( "konbanwa");
 			break;
 		}
 	}
 	else if (message.content.toLowerCase()==="ty"||message.content.toLowerCase().includes(" ty "))
-		bot.user.sendMessage(message, "yw");
+		message.channel.sendMessage( "yw");
 	else if (message.content.toLowerCase().includes("noot noot"))
-		bot.user.sendMessage(message, "noot!");
+		message.channel.sendMessage( "noot!");
 	else if (message.content.toLowerCase()===("\\timestamp")){
 		var d = new Date();
 		message.reply( d.getMinutes());
 	}
 	else if (message.content.toLowerCase()===("???"))
-		bot.user.sendMessage(message, "\t¿¿¿");
+		message.channel.sendMessage( "\t¿¿¿");
 	else if (message.content.toLowerCase().includes("my mind's tellin")&&message.content.toLowerCase().includes("me no"))
-		bot.user.sendMessage(message, "BUT MY BODY");
+		message.channel.sendMessage( "BUT MY BODY");
 	else if (message.content.toLowerCase().includes("my bo")&&message.content.toLowerCase().includes("dy's tellin")&&message.content.toLowerCase().includes("me y"))
-		bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=gTXGL0xPyLA");
+		message.channel.sendMessage( "\\play https://www.youtube.com/watch?v=gTXGL0xPyLA");
 	else if (message.content.toLowerCase().includes("here come dat"))
-		bot.user.sendMessage(message, "oh shit waddup!");
+		message.channel.sendMessage( "oh shit waddup!");
 	else if (message.content.toLowerCase().includes("\\datboi")||message.content.toLowerCase().includes("\\herecomedatboi"))
-		bot.user.sendFile(message, "https://media.giphy.com/media/UHKL9BtyM4WrK/giphy.gif");
+		message.channel.sendFile( "https://media.giphy.com/media/UHKL9BtyM4WrK/giphy.gif");
 	else if (message.content.toLowerCase()==="\\d4")
-		bot.user.sendMessage(message, "MISTER YOUUUNNNG");
+		message.channel.sendMessage( "MISTER YOUUUNNNG");
 	else if (message.content.toLowerCase()===("kms"))
 		message.reply( "ys kys");
 	else if (message.content.toLowerCase()===("\\kms"))
-		bot.user.sendMessage(message, message.author+" has blown their brains out.");
+		message.channel.sendMessage( message.author+" has blown their brains out.");
 	else if (message.content.toLowerCase()===("kys"))
-		bot.user.sendMessage(message, "ys kys");
+		message.channel.sendMessage( "ys kys");
 	else if (message.content.toLowerCase().includes("\\lenny"))
-		bot.user.sendMessage(message, "( ͡° ͜ʖ ͡°)");
+		message.channel.sendMessage( "( ͡° ͜ʖ ͡°)");
 	else if (message.content.toLowerCase().substring(0,4)===("\\rek")){
 		var mess = message.content.toLowerCase().split(" ");
 		//mess[1] = mess.join(" ").substring(4);
@@ -209,7 +209,7 @@ bot.on("message",function(message){
 		var beat = ["",""];
 		var weap = "";
 		if (message.author.name==="lily"&&(message.content.toLowerCase().includes("space")||message.content.toLowerCase().includes("171423773499588608"))){
-			bot.user.sendMessage(message,message.author+" beat "+bot.user.users.get("id","171423773499588608").mention()+" to death with his own selfie stick.");
+			message.channel.sendMessage(message.author+" beat "+bot.user.users.get("id","171423773499588608").mention()+" to death with his own selfie stick.");
 		}
 		else{
 			switch(Math.floor(Math.random()*10)){
@@ -275,41 +275,41 @@ bot.on("message",function(message){
 			break;
 			
 		}
-		bot.user.sendMessage(message,message.author+beat[0]+mess[1]+beat[1]);
+		message.channel.sendMessage(message.author+beat[0]+mess[1]+beat[1]);
 		}
 		
 		
 	}
 	else if (message.content.toLowerCase()===("ping"))
-		bot.user.sendMessage(message, "pong");
+		message.channel.sendMessage( "pong");
 	else if (message.content.toLowerCase()===("\\???")){
 		///bot.user.deleteMessage(message);
-		bot.user.sendFile(message, "http://i2.kym-cdn.com/entries/icons/original/000/018/489/nick-young-confused-face-300x256_nqlyaa.png");
+		message.channel.sendFile( "http://i2.kym-cdn.com/entries/icons/original/000/018/489/nick-young-confused-face-300x256_nqlyaa.png");
 	}
 	else if (message.content.toLowerCase().includes("\\nani"))
-		bot.user.sendFile(message, "http://i.imgur.com/ZNkdYOJ.png");
+		message.channel.sendFile( "http://i.imgur.com/ZNkdYOJ.png");
 	else if (message.content.toLowerCase().includes(("oh hot reservoir"))||message.content.toLowerCase().includes(("o hot reservoir")))
-		bot.user.sendMessage(message, "this is my jelly");
+		message.channel.sendMessage( "this is my jelly");
 	else if (message.content.toLowerCase().includes("\\doot"))
-		bot.user.sendMessage(message, ":trumpet: doot :trumpet: doot :trumpet: doot :trumpet: ");
+		message.channel.sendMessage( ":trumpet: doot :trumpet: doot :trumpet: doot :trumpet: ");
 	else if (message.content.toLowerCase().includes(("oh hot damn"))||message.content.toLowerCase().includes(("o hot damn"))){
 		message.reply( "STRAAAWBERRRY JAAAAAAAAAAM");
-		bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=6pQdBaFfHjs");
+		message.channel.sendMessage( "\\play https://www.youtube.com/watch?v=6pQdBaFfHjs");
 	}
 	else if (message.content.toLowerCase()==="\\jump"){
 		var jump = Math.floor(Math.random()*4);
 		switch (jump){
 			case 0:
-			bot.user.sendMessage(message, "NO JUMPING!");
+			message.channel.sendMessage( "NO JUMPING!");
 			break;
 			case 1:
-			bot.user.sendMessage(message, "NO!");
+			message.channel.sendMessage( "NO!");
 			break;
 			case 2:
-			bot.user.sendMessage(message, "STAY ON THE GROUND, YOUNG MAN.");
+			message.channel.sendMessage( "STAY ON THE GROUND, YOUNG MAN.");
 			break;
 			case 3:
-			bot.user.sendMessage(message, "JUMPING IS FOR JOKERS");
+			message.channel.sendMessage( "JUMPING IS FOR JOKERS");
 			break;
 		}
 	}
@@ -338,22 +338,22 @@ bot.on("message",function(message){
 		}
 		switch (squeesh){
 			case 0:
-			bot.user.sendMessage(message, "(* "+mouth+" *");
+			message.channel.sendMessage( "(* "+mouth+" *");
 			break;
 			case 1:
-			bot.user.sendMessage(message, "(o "+mouth+" o 7");
+			message.channel.sendMessage( "(o "+mouth+" o 7");
 			break;
 			case 2:
-			bot.user.sendMessage(message, "(- "+mouth+" -");
+			message.channel.sendMessage( "(- "+mouth+" -");
 			break;
 			case 3:
-			bot.user.sendMessage(message, "(^ "+mouth+" ^");
+			message.channel.sendMessage( "(^ "+mouth+" ^");
 			break;
 			case 4:
-			bot.user.sendMessage(message, "(O "+mouth+" O");
+			message.channel.sendMessage( "(O "+mouth+" O");
 			break;
 			case 5:
-			bot.user.sendMessage(message, "(Q "+mouth+" Q");
+			message.channel.sendMessage( "(Q "+mouth+" Q");
 			break;
 		}
 	}
@@ -414,7 +414,7 @@ bot.on("message",function(message){
 			// If the channel is a voice channel, ...
 			if (channel instanceof Discord.VoiceChannel && channel===message.author.voiceChannel) {
 				// ... reply with the channel name and the ID ...
-				bot.user.sendMessage(message, "Sit tight, kids. Joining \""+channel.name+"\"");
+				message.channel.sendMessage( "Sit tight, kids. Joining \""+channel.name+"\"");
 				// ... and join the channel
 				bot.user.joinVoiceChannel(channel).catch(error);
 				// Afterwards, break the loop so the bot doesn't join any other voice
@@ -426,10 +426,10 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase()===("\\jam")){
 		message.reply( "STRAAAWBERRRY JAAAAAAAAAAM");
-		bot.user.sendMessage(message, "\\play https://www.youtube.com/watch?v=6pQdBaFfHjs");
+		message.channel.sendMessage( "\\play https://www.youtube.com/watch?v=6pQdBaFfHjs");
 	}
 	else if (message.content.toLowerCase()===("\\reload")){
-		bot.user.sendMessage(message, message.author.name+" has loaded the gun!");
+		message.channel.sendMessage( message.author.name+" has loaded the gun!");
 		loader = message.author.name;
 	}
 	else if (message.content.toLowerCase()===("\\rr")){
@@ -448,7 +448,7 @@ bot.on("message",function(message){
 			splitted.shift();
 			splitted.shift();
 			setInterval(function () {
-				bot.user.sendMessage(message,"\\play "+splitted.join(" ")); 
+				message.channel.sendMessage("\\play "+splitted.join(" ")); 
 				count++;
 				if (count>=times){
 					message.reply( "Your loop has completed.");
@@ -461,10 +461,10 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase()===("\\kaomoji")){
 		var lennies = ["( ͡° ͜ʖ ͡°)","└[⩿ ͟ل͜⪀]┘","(づ⟃益⟄)づ","ヽ(ʘ ͟ʖʘ)ﾉ","(✿ ͜つ✿)","ლ(◍⍊◎ლ)","(∩`Ꮂ´)⊃━☆ﾟ.*","乁(ಠ‸ಠ)ㄏ","୨☯ᴥ☯୧","\( º  ͜ʖ º )/","ᕳ´• Ꮂ •`ᕲ","(づ⪦﹏⪧)づ","(ง■ヮ■)ง","乁(・ロ・)ㄏ","ᕕ( ͠°﹏ °)ᕗ","(∩^Д^)⊃━☆ﾟ.*","ᕕ(⫑෴⫒)ᕗ","\(⪧!⪦)/","(づꗞᨎꗞ)づ","(ง º ᴥ º )ง","ᘳ■‸■ᘰ","(∩❍ω❍)⊃━☆ﾟ.*"]
-		bot.user.sendMessage(message,lennies[Math.floor(Math.random()*lennies.length)]);
+		message.channel.sendMessage(lennies[Math.floor(Math.random()*lennies.length)]);
 	}
 	else if (message.content.toLowerCase()===("\\share")){
-		bot.user.sendMessage(message,"Use this link to authenticate lilybot on another server: https://discordapp.com/oauth2/authorize?client_id=213414055497433088&scope=bot");
+		message.channel.sendMessage("Use this link to authenticate lilybot on another server: https://discordapp.com/oauth2/authorize?client_id=213414055497433088&scope=bot");
 	}
 	else if (message.content.toLowerCase().includes("\\floob")){
 		var floob = Math.floor(Math.random()*13);
@@ -526,7 +526,7 @@ bot.on("message",function(message){
 			servernumbers[1][2] = 0;
 		}
 		
-		bot.user.sendMessage(message, "A number has been generated.");
+		message.channel.sendMessage( "A number has been generated.");
 		
 	}
 	else if (isNaN(message.content.toLowerCase().substring(6))&&message.content.toLowerCase().substring(0,6)===("\\guess")){
@@ -550,9 +550,9 @@ bot.on("message",function(message){
 					servernumbers[0][0] = 0;
 				}
 				
-				//bot.user.sendMessage(message, number);
+				//message.channel.sendMessage( number);
 			}
-			else bot.user.sendMessage(message, "A number has not been picked. Use \\pickanumber <number>");
+			else message.channel.sendMessage( "A number has not been picked. Use \\pickanumber <number>");
 		}
 		else{
 			if (servernumbers[1][0]!=0){
@@ -571,9 +571,9 @@ bot.on("message",function(message){
 					servernumbers[1][0] = 0;
 				}
 				
-				//bot.user.sendMessage(message, number);
+				//message.channel.sendMessage( number);
 			}
-			else bot.user.sendMessage(message, "A number has not been picked. Use \\pickanumber <number>");
+			else message.channel.sendMessage( "A number has not been picked. Use \\pickanumber <number>");
 		}
 	}
 	//END NUMBER GAME!
@@ -669,7 +669,7 @@ bot.on("message",function(message){
 				}
 				str+="\n";
 			}
-			if (server_last[id]!=mess[2]) bot.user.sendMessage(message,str);
+			if (server_last[id]!=mess[2]) message.channel.sendMessage(str);
 			server_last[id] = mess[2];
 			//check for a win
 			//rows
@@ -726,7 +726,7 @@ bot.on("message",function(message){
 							serverboards[id][i][a] = 0;
 						}
 					}
-					bot.user.sendMessage(message, "The result is a draw! The board has been reset.");
+					message.channel.sendMessage( "The result is a draw! The board has been reset.");
 				}
 			}
 		}
@@ -735,7 +735,7 @@ bot.on("message",function(message){
 	//CHECKERS!
 	/*else if (message.content.toLowerCase()===("\\clearcheckers")){
 		message.reply( "The board has been cleared.");
-		bot.user.sendMessage(message, ":white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:\n"+
+		message.channel.sendMessage( ":white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:\n"+
 		":white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:\n"+
 		":white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:\n"+
 		":white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:\n"+
