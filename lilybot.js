@@ -752,7 +752,6 @@ bot.on("message",function(message){
 
 function error(e) {
 	console.log(e.stack);
-	message.channel.sendMessage("Error: "+e.stack);
 	bot.users.find("id", "175812328783216649").sendMessage("error: "+e.stack)
-	process.exit(0);
+	//process.exit(0);
 }
