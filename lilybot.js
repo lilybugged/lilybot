@@ -357,9 +357,13 @@ bot.on("message",function(message){
 		}
 	}
 	else if (message.content.substring(0,3)=="\\js"){
+		try{
+			message.channel.sendMessage(eval(message.content.substring(3)));
+		}
+		catch(err){
+			message.channel.sendMessage("error: "+err.message);
+		}
 		//message.delete();
-		message.channel.sendMessage(eval(message.content.substring(3)));
-		message.delete();
 	}
 	else if (message.content.toLowerCase()===("\\cmdpls")||message.content.toLowerCase()===("\\cmdspls")){
 		//message.reply( "have sum cmds");
