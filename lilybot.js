@@ -16,7 +16,7 @@ msg = "";
 //@lilybot#1942
 bot.login("Bot MjEzNDE0MDU1NDk3NDMzMDg4.Co6E1w.jI4-3ES-9m1ZcC2vyOE0mpSd51U");
 
-client.on('error', (error) => {
+bot.on('error', (error) => {
   message.channel.sendMessage("Error: "+error);
   guild.member("175812328783216649").sendMessage("Error: "+error);
 });
