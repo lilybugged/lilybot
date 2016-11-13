@@ -16,14 +16,11 @@ msg = "";
 //@lilybot#1942
 bot.login("Bot MjEzNDE0MDU1NDk3NDMzMDg4.Co6E1w.jI4-3ES-9m1ZcC2vyOE0mpSd51U");
 
-try{
 bot.on('error', (error) => {
-  message.channel.sendMessage("Error: "+error);
   guild.member("175812328783216649").sendMessage("Error: "+error);
 });
 
 bot.on('disconnect', () => {
-  message.channel.sendMessage("disconnecting");
   guild.member("175812328783216649").sendMessage("disconnecting");
 });
 
@@ -765,10 +762,5 @@ function error(e) {
 	console.log(e.stack);
 	message.channel.sendMessage("Error: "+e.stack);
 	guild.member("175812328783216649").sendMessage("Error: "+e.stack);
-	//process.exit(0);
-}
-}
-catch(err){
-	message.channel.sendMessage("Error: "+err.message);
-	guild.member("175812328783216649").sendMessage("Error: "+err.message);
+	process.exit(0);
 }
