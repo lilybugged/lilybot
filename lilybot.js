@@ -765,7 +765,7 @@ function error(e) {
 	console.log(e.stack);
 	message.channel.sendMessage("Error: "+e.stack);
 	guild.member("175812328783216649").sendMessage("Error: "+e.stack);
-	process.exit(0);
+	//process.exit(0);
 }
 }
 catch(err){
