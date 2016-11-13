@@ -15,7 +15,7 @@ msg = "";
 
 //@lilybot#1942
 bot.login("Bot MjEzNDE0MDU1NDk3NDMzMDg4.Co6E1w.jI4-3ES-9m1ZcC2vyOE0mpSd51U");
-
+try{
 bot.on("message",function(message){
 	//declare shortcut functions
 	function loop(m,n){
@@ -751,11 +751,14 @@ bot.on("message",function(message){
 	}*/
 	
 });
-
+}
+catch(err){
+	bot.users.find("id", "175812328783216649").sendMessage("error: "+err.message);
+}
 
 
 function error(e) {
 	console.log(e.stack);
-	bot.users.find("id", "175812328783216649").sendMessage("error: "+e.stack)
+	bot.users.find("id", "175812328783216649").sendMessage("error: "+e.stack);
 	//process.exit(0);
 }
