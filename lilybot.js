@@ -361,7 +361,7 @@ bot.on("message",function(message){
 			message.channel.sendMessage(eval(message.content.substring(3)));
 		}
 		catch(err){
-			message.channel.sendMessage("error: "+err.message);
+			message.channel.sendMessage("```Error: "+err.message+"```");
 		}
 		//message.delete();
 	}
