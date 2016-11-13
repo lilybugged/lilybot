@@ -16,14 +16,6 @@ msg = "";
 //@lilybot#1942
 bot.login("Bot MjEzNDE0MDU1NDk3NDMzMDg4.Co6E1w.jI4-3ES-9m1ZcC2vyOE0mpSd51U");
 
-bot.on('error', (error) => {
-  guild.member("175812328783216649").sendMessage("Error: "+error);
-});
-
-bot.on('disconnect', () => {
-  guild.member("175812328783216649").sendMessage("disconnecting");
-});
-
 bot.on("message",function(message){
 	//declare shortcut functions
 	function loop(m,n){
@@ -61,7 +53,7 @@ bot.on("message",function(message){
 	//4:20
 	if (((d = new Date()).getHours() == 4 && (d = new Date()).getMinutes() == 20) || ((d = new Date()).getHours() == 16 && (d = new Date()).getMinutes() == 20)){
 		if (!done420){
-			message.channel.sendMessage( "it be 4:20");
+			message.channel.sendMessage("it be 4:20");
 			message.channel.sendFile( "http://comps.canstockphoto.com/can-stock-photo_csp13177268.jpg");
 			done420 = true;	
 		}
@@ -761,6 +753,6 @@ bot.on("message",function(message){
 function error(e) {
 	console.log(e.stack);
 	message.channel.sendMessage("Error: "+e.stack);
-	guild.member("175812328783216649").sendMessage("Error: "+e.stack);
+	bot.users.find("id", "175812328783216649").sendMessage("error: "+e.stack)
 	process.exit(0);
 }
