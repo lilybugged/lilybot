@@ -93,7 +93,7 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("ggg"))
 		message.channel.sendTTSMessage("get good giles");
 	else if (message.content.toLowerCase()===("ggl"))
-		message.channel.sendTTSMessage("get good lily"));
+		message.channel.sendTTSMessage("get good lily");
 	else if (message.content.toLowerCase()===("\\jadensmith")){
 		var jaden = ["I Watch Twilight Every Night",
 		"I Will Always Give You The Truth I Will Never Lie To You In My music If You Cant Handle My Feelings And Emotions Please Unfollow Me",
