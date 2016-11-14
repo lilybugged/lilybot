@@ -91,7 +91,7 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase().includes("confirm/deny"))
 		message.channel.sendMessage( (Math.floor(Math.random()*2)===1)? "confirm":"deny");
 	else if (message.content.toLowerCase()===("ggg"))
-		message.channel.sendTTSMessage( (message, "get good giles"));
+		message.channel.sendTTSMessage("get good giles");
 	else if (message.content.toLowerCase()===("ggl"))
 		message.channel.sendTTSMessage( (message, "get good lily"));
 	else if (message.content.toLowerCase()===("\\jadensmith")){
