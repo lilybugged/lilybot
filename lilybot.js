@@ -414,19 +414,7 @@ bot.on("message",function(message){
 		//message.reply( msg);
 	}
 	else if (message.content.toLowerCase()==="\\joinvoice"){
-		for (var channel of message.guild.channels) {
-			// If the channel is a voice channel, ...
-			if (channel instanceof Discord.VoiceChannel && channel===message.member.voiceChannel) {
-				// ... reply with the channel name and the ID ...
-				message.channel.sendMessage( "Sit tight, kids. Joining \""+channel.name+"\"");
-				// ... and join the channel
-				bot.user.joinVoiceChannel(channel);
-				// Afterwards, break the loop so the bot doesn't join any other voice
-				// channels
-				break;
-			}
-		}
-		
+		message.member.voiceChannel.join()
 	}
 	else if (message.content.toLowerCase()===("\\jam")){
 		message.reply( "STRAAAWBERRRY JAAAAAAAAAAM");
@@ -439,10 +427,10 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("\\rr")){
 		var shot = (Math.floor(Math.random()*6)==1)
 		if (shot){
-			message.reply( "you spin the revolver...\n\n "+message.author.name+" has died by "+loader+"'s bullet. Reloading.");
+			message.reply("you spin the revolver...\n\n "+message.author.name+" has died by "+loader+"'s bullet. Reloading.");
 			loader = message.author.name;
 		}
-		else message.reply( "you spin the revolver...\n\nyou survived.");
+		else message.reply("you spin the revolver...\n\nyou survived.");
 	}
 	else if (message.content.toLowerCase().substring(0,5)===("\\loop")){
 		var splitted = message.content.toLowerCase().split(" ");
