@@ -416,11 +416,11 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()==="\\joinvoice"){
 		for (var channel of message.guild.channels) {
 			// If the channel is a voice channel, ...
-			if (channel instanceof Discord.VoiceChannel && channel===message.author.voiceChannel) {
+			if (channel instanceof Discord.VoiceChannel && channel===message.member.voiceChannel) {
 				// ... reply with the channel name and the ID ...
 				message.channel.sendMessage( "Sit tight, kids. Joining \""+channel.name+"\"");
 				// ... and join the channel
-				bot.user.joinVoiceChannel(channel).catch(error);
+				bot.user.joinVoiceChannel(channel);
 				// Afterwards, break the loop so the bot doesn't join any other voice
 				// channels
 				break;
