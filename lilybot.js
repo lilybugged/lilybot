@@ -409,7 +409,7 @@ bot.on("message",function(message){
 		+ "**\\airhorn <1/2>** -\n\t\t plays one of two airhorn sounds (use \\joinvoice first!)\n"
 		+ "**\\kms** -\n\t\t kill yourself.\n"
 		+ "**\\rek <user>** -\n\t\t reks the given user in one of many ways\n"
-		+ "**\\doot** -\n\t\t invites lilybot to respond with a colorful and relative message\n"
+		+ "**\\doot** -\n\t\t invites lilybot to respond with a colorful and relevant message\n"
 		+ "**\\gj** -\n\t\t inserts a certain gif from NGL\n"
 		+ "**\\ogj** -\n\t\t OMEGAGOODJOB\n"
 		+ "**confirm/deny** -\n\t\t include this to get an answer from lilybot\n"
