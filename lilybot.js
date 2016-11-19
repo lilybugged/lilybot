@@ -591,6 +591,7 @@ bot.on("message",function(message){
 		
 		server_last[id] = 0;
 		message.reply( "The board has been cleared.");
+		message.channel.sendMessage(":black_large_square::black_large_square::black_large_square:\n:black_large_square::black_large_square::black_large_square:\n:black_large_square::black_large_square::black_large_square:");
 	}
 	else if (message.content.toLowerCase().substring(0,6)===("\\place")){
 		win = false;
