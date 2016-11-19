@@ -31,6 +31,10 @@ bot.on("message",function(message){
 		// where "m" is the message to send
 		message.channel.sendTTSMessage(m);
 	}
+	function regex(m,p){
+		// where "m" is the subject, "p" is the pattern
+		message.channel.sendMessage(m.match(eval(p)));
+	}
 	/*function cmd(m){
 		// where "m" is the message to send - this deletes the sent message so only a command meant for another bot is executed
 		var temp = message.channel.sendMessage(m);
@@ -94,6 +98,8 @@ bot.on("message",function(message){
 		message.channel.sendTTSMessage("get good giles");
 	else if (message.content.toLowerCase()===("ggl"))
 		message.channel.sendTTSMessage("get good lily");
+	else if (message.content.toLowerCase().substring(0,6)===("\\regex"))
+		regex(message.content.split(" ")[1],message.content.split(" ")[2]);
 	else if (message.content.toLowerCase()===("\\jadensmith")){
 		var jaden = ["I Watch Twilight Every Night",
 		"I Will Always Give You The Truth I Will Never Lie To You In My music If You Cant Handle My Feelings And Emotions Please Unfollow Me",
@@ -409,6 +415,7 @@ bot.on("message",function(message){
 		+ "**confirm/deny** -\n\t\t include this to get an answer from lilybot\n"
 		+ "**my mind's tellin me no** -\n\t\t \"BUT MY BODY\"\n"
 		+ "**my body's telin me yes** -\n\t\t triggers the 'bump and grind' video (use \joinvoice first!)\n"
+		+ "**\\regex <subject> <pattern>** -\n\t\t test a regex, return an array of matches\n"
 		);
 		//+ "*\\share* -\n\t\t generates a link with which to authenticate lilybot on another server"
 		//message.reply( msg);
