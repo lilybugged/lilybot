@@ -363,7 +363,7 @@ bot.on("message",function(message){
 		}
 	}
 	else if (message.content.substring(0,3)=="\\js"){
-		if (message.author.username=="lily"){
+		if (message.author.username=="lily"||message.author.username=="tpr"){
 			try{
 				message.channel.sendMessage(eval(message.content.substring(3)));
 			}
