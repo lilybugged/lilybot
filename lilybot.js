@@ -214,7 +214,7 @@ bot.on("message",function(message){
 		var beat = ["",""];
 		var weap = "";
 		if (message.author.username=="lily"&&(message.content.toLowerCase().includes("space")||message.content.toLowerCase().includes("giles")||message.content.toLowerCase().includes("171423773499588608"))){
-			message.channel.sendMessage(message.author+" beat "+bot.users.get("id","171423773499588608").mention()+" to death with his own selfie stick.");
+			message.channel.sendMessage(message.author+" beat @"+bot.users.find("id","171423773499588608").username" to death with his own selfie stick.");
 		}
 		else{
 			switch(Math.floor(Math.random()*10)){
