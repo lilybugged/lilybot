@@ -371,7 +371,7 @@ bot.on("message",function(message){
 				message.channel.sendMessage("```Error: "+err.message+"```");
 			}
 		}
-		else message.reply("stop trynna break my shit");
+		else send("stop trynna break my shit");
 		
 		//message.delete();
 	}
