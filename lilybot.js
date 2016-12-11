@@ -362,13 +362,17 @@ bot.on("message",function(message){
 			break;
 		}
 	}
-	else if (message.content.substring(0,3)=="\\js"&&message.author.username=="lily"){
-		try{
-			message.channel.sendMessage(eval(message.content.substring(3)));
+	else if (message.content.substring(0,3)=="\\js"){
+		if (message.author.username=="lily"){
+			try{
+				message.channel.sendMessage(eval(message.content.substring(3)));
+			}
+			catch(err){
+				message.channel.sendMessage("```Error: "+err.message+"```");
+			}
 		}
-		catch(err){
-			message.channel.sendMessage("```Error: "+err.message+"```");
-		}
+		else message.reply("stop trynna break my shit");
+		
 		//message.delete();
 	}
 	else if (message.content.toLowerCase()===("\\cmdpls")||message.content.toLowerCase()===("\\cmdspls")){
