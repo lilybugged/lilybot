@@ -363,7 +363,7 @@ bot.on("message",function(message){
 		}
 	}
 	else if (message.content.substring(0,3)=="\\js"){
-		if ((message.author.username=="lily"||message.author.username=="tpr"||message.author.username=="eggbongo")&&!message.content.includes("while(")&&!message.content.includes("while (")){
+		if ((message.author.username=="lily"||message.author.username=="tpr"||message.author.username=="eggbongo")&&!message.content.includes("while(")&&!message.content.includes("while (")&&!message.content.includes("for (")&&!message.content.includes("for(")){
 			try{
 				message.channel.sendMessage(eval(message.content.substring(3)));
 			}
