@@ -39,6 +39,133 @@ bot.on("message",function(message){
 		// where "m" is the message to send - this deletes the sent message so only a command meant for another bot is executed
 		var temp = message.channel.sendMessage(m);
 	}*/
+	//gambling funcs
+	gamble = function(user,num){
+	if(!isNaN(num)){
+			if (users.includes(user)){
+				if (num<=monies[users.indexOf(user)]){
+					if (Math.random() > 0.6){
+						monies[users.indexOf(user)] -= num;
+						send("You lost your gambled monies.\nYour monies is now: "+monies[users.indexOf(user)]);
+					}
+					else{
+						var added = Math.floor(((Math.random()*.6)+.5)*num);
+						monies[users.indexOf(user)] -= 0-added;
+						send("You gain "+added+" monies and keep what you had.\nYour monies is now: "+monies[users.indexOf(user)]);
+					}
+					
+					
+				}
+				else{
+					send("You don't have enough monies to complete this operation.");
+				}
+			}
+			else{
+				send("error; run setup with \\setupgamble before running commands.");
+			}
+		}
+		else{
+			send("Operation failed. Enter a valid number.");
+		}
+	};
+	loot = function(user){
+		if (users.includes(user)){
+			if ((new Date()).getMinutes()>pastaccess[users.indexOf(user)]||((new Date()).getMinutes()==1&&(new Date()).getMinutes()!=pastaccess[users.indexOf(user)])){
+				var money = Math.floor(100+(Math.random()*150));
+				monies[users.indexOf(user)]+=money;
+				send("You gain "+money+" monies.\nYou now have "+monies[users.indexOf(user)]+" total monies.")
+				pastaccess[users.indexOf(user)] = (new Date()).getMinutes();
+			}
+			else{
+				send("You can only loot once per minute.");
+			}
+		}
+		else{
+			send("error; run setup with \\setupgamble before running commands.");
+		}
+	};
+	profile = function(user){
+		send("Profile for "+user+":\nMonies: "+monies[users.indexOf(user)]+"\nSavingu: "+saves[users.indexOf(user)]);
+	};
+	clear = function(){
+		users = ["lily"];
+		monies = [0]
+		pastaccess = [((new Date()).getMinutes())];
+		saves = [0];
+		send("All tables have been cleared.");
+	};
+	setupgamble = function(user){
+		if (users.includes(user)){
+			send("Your user is already set.");
+		}
+		else{
+			users.push(user);
+			monies.push(0);
+			pastaccess.push((new Date()).getMinutes());
+			saves.push(0);
+			send("Your user has been successfully set.");
+		}
+	};
+	transferin = function(user,num){
+		if(!isNaN(num)){
+			if (users.includes(user)){
+				if (num<=monies[users.indexOf(user)]){
+					monies[users.indexOf(user)]-=num;
+					saves[users.indexOf(user)]+=num;
+					send("Your monies is now: "+monies[users.indexOf(user)]+"\nYour savingu is now: "+saves[users.indexOf(user)]);
+				}
+				else{
+					send("You don't have enough monies to complete this operation.");
+				}
+			}
+			else{
+				send("error; run setup with \\setupgamble before running commands.");
+			}
+		}
+		else{
+			send("Operation failed. Enter a valid number.");
+		}
+	};
+	transferout = function(user,num){
+		if(!isNaN(num)){
+			if (users.includes(user)){
+				if (num<=saves[users.indexOf(user)]){
+					monies[users.indexOf(user)]+=num;
+					saves[users.indexOf(user)]-=num;
+					send("Your monies is now: "+monies[users.indexOf(user)]+"\nYour savingu is now: "+saves[users.indexOf(user)]);
+				}
+				else{
+					send("You don't have enough monies in your savingu to complete this operation.");
+				}
+			}
+			else{
+				send("error; run setup with \\setupgamble before running commands.");
+			}
+		}
+		else{
+			send("Operation failed. Enter a valid number.");
+		}
+	};
+	transferto = function(user,touser,num){
+		if(!isNaN(String(num))){
+			if (users.includes(user)&&users.includes(touser)){
+				if (num<=monies[users.indexOf(user)]){
+					monies[users.indexOf(user)]-=num;
+					monies[users.indexOf(touser)]+=num;
+					send("Your monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
+				}
+				else{
+					send("You don't have enough monies to complete this operation.");
+				}
+			}
+			else{
+				send("error; both users must run setup with \\setupgamble before running commands.");
+			}
+		}
+		else{
+			send("Operation failed. Enter a valid number.");
+		}
+	};
 	//define winner
 	winner = function(which){
 		var id = 0;
