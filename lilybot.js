@@ -99,7 +99,7 @@ bot.on("message",function(message){
 		else{
 			users.push(user);
 			monies.push(0);
-			pastaccess.push((new Date()).getMinutes());
+			pastaccess.push((new Date()));
 			saves.push(0);
 			send("Your user has been successfully set.");
 		}
