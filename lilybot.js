@@ -88,7 +88,7 @@ bot.on("message",function(message){
 	clear = function(){
 		users = ["lily"];
 		monies = [0]
-		pastaccess = (new Date());
+		pastaccess = [(new Date())];
 		saves = [0];
 		send("All tables have been cleared.");
 	};
