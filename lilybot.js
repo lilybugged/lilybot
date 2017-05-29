@@ -72,7 +72,7 @@ bot.on("message",function(message){
 				var money = Math.floor(100+(Math.random()*150));
 				monies[users.indexOf(user)]+=money;
 				send("You gain "+money+" monies.\nYou now have "+monies[users.indexOf(user)]+" total monies.")
-				pastaccess[users.indexOf(user)] = (new Date()).getMinutes();
+				pastaccess[users.indexOf(user)] = (new Date());
 			}
 			else{
 				send("You can only loot once per minute.");
