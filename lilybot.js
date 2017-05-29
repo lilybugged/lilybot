@@ -166,6 +166,9 @@ bot.on("message",function(message){
 			send("Operation failed. Enter a valid number.");
 		}
 	};
+	
+	
+	
 	//define winner
 	winner = function(which){
 		var id = 0;
@@ -200,15 +203,39 @@ bot.on("message",function(message){
 		bot.user.setGame("type \\cmdspls");
 		//bot.user.setAvatar("C:\Users\lilia\Desktop\lilbot.user.png", function(){});
 	}
-	if (message.content.toLowerCase()===("\\hue")){
+	else if (message.content.toLowerCase()===("\\hue")){
 		message.channel.sendMessage( ".music play https://www.youtube.com/watch?v=SHo9IJYaylQ");
 	}
-	if (message.content.toLowerCase()===("\\r'amen")&&message.author.id==="176021596325150720"){
+	else if (message.content.toLowerCase()===("\\r'amen")&&message.author.id==="176021596325150720"){
 		message.channel.sendFile( "https://static3.fjcdn.com/comments/R+amen+my+brother+_dc14bd6d200fb416c558123f7d1e7d2d.jpg");
 	}
-	if ((message.content.toLowerCase()===("\\prayer")||message.content.toLowerCase()===("\\ourpasta")||message.content.toLowerCase()===("\\ourpastawhoartinacolander"))&&message.author.id==="176021596325150720"){
+	else if ((message.content.toLowerCase()===("\\prayer")||message.content.toLowerCase()===("\\ourpasta")||message.content.toLowerCase()===("\\ourpastawhoartinacolander"))&&message.author.id==="176021596325150720"){
 		message.channel.sendMessage( "Our pasta, who art in a colander,\nDraining be your noodles.\nThy noodle come,\nThy sauce be yum,\nOn top some grated parmesan.\nGive us this day our garlic bread,\nAnd forgive us our trespasses,\nAs we forgive those who trample on our lawns.\nAnd lead us not into vegetarianism, but deliver us some pizza,\nFor thine is the meatball, the noodle, and the sauce, forever and ever.\n-R’Amen.");
 	}
+	
+	//gambling
+	else if(message.content.substring(0,7)===("\\gamble")){
+		gamble(message.author.username,message.content.substring(8));
+	}
+	else if(message.content.substring(0,8)===("\\profile")){
+		profile((message.content.length()>8)?message.content.substring(9):message.author.username);
+	}
+	else if(message.content===("\\setupgamble")){
+		setupgamble(message.author.username);
+	}
+	else if(message.content===("\\loot")){
+		loot(message.author.username);
+	}
+	else if(message.content.substring(0,11)===("\\transferin")){
+		transferin(message.author.username, message.content.substring(12));
+	}
+	else if(message.content.substring(0,12)===("\\transferout")){
+		transferout(message.author.username, message.content.substring(13));
+	}
+	else if(message.content.substring(0,11)===("\\transferto")){
+		transferto(message.author.username, message.content.split(" ")[1], message.content.split(" ")[2]);
+	}
+	
 	else if (message.content.toLowerCase().includes("are you ready"))
 		message.reply( "Aye aye, Captain!");
 	else if (message.content.toLowerCase().includes("i can't hear you"))
@@ -490,7 +517,7 @@ bot.on("message",function(message){
 		}
 	}
 	else if (message.content.substring(0,3)=="\\js"){
-		if ((message.author.username=="lily"||message.author.username=="tpr"||message.author.username=="eggbongo"||message.author.username=="lilybot")&&!message.content.includes("while(")&&!message.content.includes("while (")&&!message.content.includes("for (")&&!message.content.includes("for(")){
+		if ((message.author.username=="lily"||message.author.username=="lilybot")&&!message.content.includes("while(")&&!message.content.includes("while (")&&!message.content.includes("for (")&&!message.content.includes("for(")){
 			try{
 				message.channel.sendMessage(eval(message.content.substring(3)));
 			}
