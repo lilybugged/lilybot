@@ -220,8 +220,8 @@ bot.on("message",function(message){
 		if (message.content==="\\profile"){
 			profile(message.author.username);
 		}
-		else if (message.content.substring(9).length()>1){
-			profile(message.content.substring(9));
+		else if (message.content.substring(8).length()>1){
+			profile(message.content.substring(8));
 		}
 		
 	}
