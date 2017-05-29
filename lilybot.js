@@ -107,7 +107,7 @@ bot.on("message",function(message){
 		}
 	};
 	transferin = function(user,num){
-		if(!isNaN(String(num)))){
+		if(!isNaN(String(num))){
 			if (users.includes(user)){
 				if (parseInt(num)<=monies[users.indexOf(user)]){
 					monies[users.indexOf(user)]-=parseInt(num);
@@ -127,7 +127,7 @@ bot.on("message",function(message){
 		}
 	};
 	transferout = function(user,num){
-		if(!isNaN(String(num)))){
+		if(!isNaN(String(num))){
 			if (users.includes(user)){
 				if (parseInt(num)<=saves[users.indexOf(user)]){
 					monies[users.indexOf(user)]+=parseInt(num);
