@@ -225,10 +225,9 @@ bot.on("message",function(message){
 		if (message.content==="\\profile"){
 			profile(message.author.username);
 		}
-		else if (message.content.substring(8).length()>1){
-			profile(message.content.substring(8));
+		else{
+			profile(message.content.split(" ")[1]);
 		}
-		
 	}
 	else if(message.content===("\\setupgamble")){
 		setupgamble(message.author.username);
