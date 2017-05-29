@@ -107,11 +107,11 @@ bot.on("message",function(message){
 		}
 	};
 	transferin = function(user,num){
-		if(!isNaN(num)){
+		if(!isNaN(String(num)))){
 			if (users.includes(user)){
-				if (num<=monies[users.indexOf(user)]){
-					monies[users.indexOf(user)]-=num;
-					saves[users.indexOf(user)]+=num;
+				if (parseInt(num)<=monies[users.indexOf(user)]){
+					monies[users.indexOf(user)]-=parseInt(num);
+					saves[users.indexOf(user)]+=parseInt(num);
 					send("Your monies is now: "+monies[users.indexOf(user)]+"\nYour savingu is now: "+saves[users.indexOf(user)]);
 				}
 				else{
@@ -127,11 +127,11 @@ bot.on("message",function(message){
 		}
 	};
 	transferout = function(user,num){
-		if(!isNaN(num)){
+		if(!isNaN(String(num)))){
 			if (users.includes(user)){
-				if (num<=saves[users.indexOf(user)]){
-					monies[users.indexOf(user)]+=num;
-					saves[users.indexOf(user)]-=num;
+				if (parseInt(num)<=saves[users.indexOf(user)]){
+					monies[users.indexOf(user)]+=parseInt(num);
+					saves[users.indexOf(user)]-=parseInt(num);
 					send("Your monies is now: "+monies[users.indexOf(user)]+"\nYour savingu is now: "+saves[users.indexOf(user)]);
 				}
 				else{
@@ -149,9 +149,9 @@ bot.on("message",function(message){
 	transferto = function(user,touser,num){
 		if(!isNaN(String(num))){
 			if (users.includes(user)&&users.includes(touser)){
-				if (num<=monies[users.indexOf(user)]){
-					monies[users.indexOf(user)]-=num;
-					monies[users.indexOf(touser)]+=num;
+				if (parseInt(num)<=monies[users.indexOf(user)]){
+					monies[users.indexOf(user)]-=parseInt(num);
+					monies[users.indexOf(touser)]+=parseInt(num);
 					send("Your monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
 				}
 				else{
