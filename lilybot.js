@@ -217,7 +217,13 @@ bot.on("message",function(message){
 		gamble(message.author.username,message.content.substring(8));
 	}
 	else if(message.content.substring(0,8)===("\\profile")){
-		profile(message.author.username);
+		if (message.content==="\\profile"){
+			profile(message.author.username);
+		}
+		else if (message.content.substring(9).length()>1){
+			profile(message.content.substring(9));
+		}
+		
 	}
 	else if(message.content===("\\setupgamble")){
 		setupgamble(message.author.username);
