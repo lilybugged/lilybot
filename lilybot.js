@@ -68,7 +68,7 @@ bot.on("message",function(message){
 	};
 	loot = function(user){
 		if (users.includes(user)){
-			if ((new Date()).getMinutes()>pastaccess[users.indexOf(user)]||((new Date()).getMinutes()==1&&(new Date()).getMinutes()!=pastaccess[users.indexOf(user)])){
+			if ((new Date()).getMinutes()>pastaccess[users.indexOf(user)].getMinutes()||((new Date()).getMinutes()==1&&(new Date()).getMinutes()!=pastaccess[users.indexOf(user)].getMinutes())||(new Date()).getHours()!=pastaccess[users.indexOf(user)].getHours()){
 				var money = Math.floor(100+(Math.random()*150));
 				monies[users.indexOf(user)]+=money;
 				send("You gain "+money+" monies.\nYou now have "+monies[users.indexOf(user)]+" total monies.")
@@ -88,7 +88,7 @@ bot.on("message",function(message){
 	clear = function(){
 		users = ["lily"];
 		monies = [0]
-		pastaccess = [((new Date()).getMinutes())];
+		pastaccess = (new Date());
 		saves = [0];
 		send("All tables have been cleared.");
 	};
@@ -234,7 +234,7 @@ bot.on("message",function(message){
 		transferto(message.author.username, message.content.split(" ")[1], message.content.split(" ")[2]);
 	}
 	else if(message.content===("\\help monies")){
-		send("```behold, the monie cmds:\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\help monies```");
+		send("```behold, th monie cmds:\n\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\help monies```");
 	}
 	
 	else if (message.content.toLowerCase().includes("are you ready"))
