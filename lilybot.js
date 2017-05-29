@@ -83,7 +83,8 @@ bot.on("message",function(message){
 		}
 	};
 	profile = function(user){
-		send("Profile for "+user+":\nMonies: "+monies[users.indexOf(user)]+"\nSavingu: "+saves[users.indexOf(user)]);
+		var temp = monies[users.indexOf(user)];
+		send("Profile for "+user+":\nMonies: "+temp+"\nSavingu: "+saves[users.indexOf(user)]);
 	};
 	clear = function(){
 		users = ["lily"];
@@ -216,7 +217,7 @@ bot.on("message",function(message){
 		gamble(message.author.username,message.content.substring(8));
 	}
 	else if(message.content.substring(0,8)===("\\profile")){
-		profile((message.content.length()>8)?message.content.substring(9):message.author.username);
+		profile(message.author.username);
 	}
 	else if(message.content===("\\setupgamble")){
 		setupgamble(message.author.username);
