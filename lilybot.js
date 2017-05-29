@@ -83,8 +83,13 @@ bot.on("message",function(message){
 		}
 	};
 	profile = function(user){
-		var temp = monies[users.indexOf(user)];
-		send("Profile for "+user+":\nMonies: "+temp+"\nSavingu: "+saves[users.indexOf(user)]);
+		if (users.includes(user)){
+			var temp = monies[users.indexOf(user)];
+			send("Profile for "+user+":\nMonies: "+temp+"\nSavingu: "+saves[users.indexOf(user)]);
+		}
+		else{
+			send("error; run setup with \\setupgamble before running commands.");
+		}
 	};
 	clear = function(){
 		users = ["lily"];
