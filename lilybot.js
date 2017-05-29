@@ -53,8 +53,6 @@ bot.on("message",function(message){
 						monies[users.indexOf(user)] -= 0-added;
 						send("You gain "+added+" monies and keep what you had.\nYour monies is now: "+monies[users.indexOf(user)]);
 					}
-					
-					
 				}
 				else{
 					send("You don't have enough monies to complete this operation.");
@@ -234,6 +232,9 @@ bot.on("message",function(message){
 	}
 	else if(message.content.substring(0,11)===("\\transferto")){
 		transferto(message.author.username, message.content.split(" ")[1], message.content.split(" ")[2]);
+	}
+	else if(message.content.substring(0,11)===("\\help monies")){
+		send("```behold, the monie cmds:\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\help monies```");
 	}
 	
 	else if (message.content.toLowerCase().includes("are you ready"))
