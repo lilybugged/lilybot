@@ -41,7 +41,7 @@ bot.on("message",function(message){
 	}*/
 	//gambling funcs
 	gamble = function(user,num){
-	if(!isNaN(num)){
+	if(!isNaN(num)&&num>0){
 			if (users.includes(user)){
 				if (num<=monies[users.indexOf(user)]){
 					if (Math.random() > 0.6){
@@ -111,7 +111,7 @@ bot.on("message",function(message){
 		}
 	};
 	transferin = function(user,num){
-		if(!isNaN(String(num))){
+		if(!isNaN(String(num))&&num>0){
 			if (users.includes(user)){
 				if (parseInt(num)<=monies[users.indexOf(user)]){
 					monies[users.indexOf(user)]-=parseInt(num);
@@ -131,7 +131,7 @@ bot.on("message",function(message){
 		}
 	};
 	transferout = function(user,num){
-		if(!isNaN(String(num))){
+		if(!isNaN(String(num))&&num>0){
 			if (users.includes(user)){
 				if (parseInt(num)<=saves[users.indexOf(user)]){
 					monies[users.indexOf(user)]+=parseInt(num);
@@ -151,7 +151,7 @@ bot.on("message",function(message){
 		}
 	};
 	transferto = function(user,touser,num){
-		if(!isNaN(String(num))){
+		if(!isNaN(String(num))&&num>0){
 			if (users.includes(user)&&users.includes(touser)){
 				if (parseInt(num)<=monies[users.indexOf(user)]){
 					monies[users.indexOf(user)]-=parseInt(num);
