@@ -172,7 +172,7 @@ bot.on("message",function(message){
 	};
 	duel = function(user,touser){
 			if (users.includes(user)&&users.includes(touser)){
-				if (monies[users.indexOf(user)]<1000){
+				if (monies[users.indexOf(user)]>=1000&&monies[users.indexOf(touser)]>=1000){
 					if(Math.floor(Math.random()*2)==0){
 						var money = Math.random()*.5;
 						monies[users.indexOf(user)]+=Math.floor(money*monies[users.indexOf(touser)]);
