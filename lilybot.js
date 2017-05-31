@@ -186,7 +186,7 @@ bot.on("message",function(message){
 					}
 				}
 				else{
-					send("You don't have enough monies to complete this operation. Dueling requires a minimum of 1000 monies.");
+					send("Someone doesn\'t have enough monies to complete this operation. Dueling requires a minimum of 1000 monies.");
 				}
 			}
 			else{
@@ -268,8 +268,13 @@ bot.on("message",function(message){
 		transferto(message.author.username, message.content.split(" ")[1], message.content.split(" ")[2]);
 	}
 	else if(message.content===("\\help monies")){
-		send("```behold, th monie cmds:\n\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\help monies```");
+		send("```behold, th monie cmds:\n\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\duel <user>\n\\help monies```");
 	}
+	else if(message.content.split(" ")[0]===("\\duel")){
+		duel(message.author.username,message.content.split(" ")[1]);
+	}
+	
+	
 	
 	else if (message.content.toLowerCase().includes("are you ready"))
 		message.reply( "Aye aye, Captain!");
