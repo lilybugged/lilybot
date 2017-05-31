@@ -174,10 +174,10 @@ bot.on("message",function(message){
 			if (users.includes(user)&&users.includes(touser)){
 				if (monies[users.indexOf(user)]>=1000&&monies[users.indexOf(touser)]>=1000){
 					if(Math.floor(Math.random()*2)==0){
-						var prize = Math.floor((Math.random()*.5)*monies[users.indexOf(touser)]);
+						var prize = Math.floor((Math.random()*(monies[users.indexOf(user)]/monies[users.indexOf(touser)]))*monies[users.indexOf(touser)]);
 						monies[users.indexOf(user)]+=prize;
 						monies[users.indexOf(touser)]-=prize;
-						send("You have Succeeded!\n\nYou have gained"+prize+"of "+touser+"\'s monies.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
+						send("You have Succeeded!\n\nYou have gained "+prize+" of "+touser+"\'s monies.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
 					}
 					else{
 						monies[users.indexOf(touser)]+=monies[users.indexOf(user)];
