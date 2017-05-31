@@ -170,6 +170,29 @@ bot.on("message",function(message){
 			send("Operation failed. Enter a valid number.");
 		}
 	};
+	duel = function(user,touser){
+			if (users.includes(user)&&users.includes(touser)){
+				if (monies[users.indexOf(user)]<1000){
+					if(Math.floor(Math.random()*2)==0){
+						var money = Math.random()*.5;
+						monies[users.indexOf(user)]+=Math.floor(money*monies[users.indexOf(touser)]);
+						monies[users.indexOf(touser)]-=Math.floor(money*monies[users.indexOf(touser)]);
+						send("You have Succeeded!\n\nYou have gained"+(Math.floor(money*monies[users.indexOf(touser)]))+"of "+touser+"\'s monies.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
+					}
+					else{
+						monies[users.indexOf(touser)]+=monies[users.indexOf(user)];
+						monies[users.indexOf(user)]=0;
+						send("You have been utterly defeated!\n\nYou have lost all of your monies. All of them.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
+					}
+				}
+				else{
+					send("You don't have enough monies to complete this operation. Dueling requires a minimum of 1000 monies.");
+				}
+			}
+			else{
+				send("error; both users must run setup with \\setupgamble before running commands.");
+			}
+	};
 	
 	
 	
