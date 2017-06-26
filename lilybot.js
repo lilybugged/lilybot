@@ -172,7 +172,7 @@ bot.on("message",function(message){
 	};
 	duel = function(user,touser){
 			if (users.includes(user)&&users.includes(touser)){
-				if (monies[users.indexOf(user)]>=1000&&monies[users.indexOf(touser)]>=1000){
+				if (monies[users.indexOf(user)]>=1&&monies[users.indexOf(touser)]>=1){
 					if(Math.floor(Math.random()*2)==0){
 						var prize = Math.floor((Math.random()*((monies[users.indexOf(user)]/monies[users.indexOf(touser)]>1)?1:monies[users.indexOf(user)]/monies[users.indexOf(touser)]))*monies[users.indexOf(touser)]);
 						monies[users.indexOf(user)]+=prize;
@@ -180,13 +180,13 @@ bot.on("message",function(message){
 						send("You have Succeeded!\n\nYou have gained "+prize+" of "+touser+"\'s monies.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
 					}
 					else{
-						monies[users.indexOf(touser)]+=monies[users.indexOf(user)];
+						//monies[users.indexOf(touser)]+=monies[users.indexOf(user)];
 						monies[users.indexOf(user)]=0;
 						send("You have been utterly defeated!\n\nYou have lost all of your monies. All of them.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
 					}
 				}
 				else{
-					send("Someone doesn\'t have enough monies to complete this operation. Dueling requires a minimum of 1000 monies.");
+					send("Someone doesn\'t have enough monies to complete this operation. Dueling requires a minimum of 1 monies.");
 				}
 			}
 			else{
@@ -253,25 +253,25 @@ bot.on("message",function(message){
 		}
 	}
 	else if(message.content===("\\setupgamble")){
-		setupgamble(message.author.username);
+		setupgamble(message.content.split(" ")[1]);
 	}
 	else if(message.content===("\\loot")){
-		loot(message.author.username);
+		loot(message.author);
 	}
 	else if(message.content.substring(0,11)===("\\transferin")){
-		transferin(message.author.username, message.content.substring(12));
+		transferin(message.author, message.content.substring(12));
 	}
 	else if(message.content.substring(0,12)===("\\transferout")){
-		transferout(message.author.username, message.content.substring(13));
+		transferout(message.author, message.content.substring(13));
 	}
 	else if(message.content.substring(0,11)===("\\transferto")){
-		transferto(message.author.username, message.content.split(" ")[1], message.content.split(" ")[2]);
+		transferto(message.author, message.content.split(" ")[1], message.content.split(" ")[2]);
 	}
 	else if(message.content===("\\help monies")){
 		send("```behold, th monie cmds:\n\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\duel <user>\n\\help monies```");
 	}
 	else if(message.content.split(" ")[0]===("\\duel")){
-		duel(message.author.username,message.content.split(" ")[1]);
+		duel(message.author,message.content.split(" ")[1]);
 	}
 	
 	
