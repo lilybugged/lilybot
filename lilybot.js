@@ -627,13 +627,13 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase()===("\\reload")){
 		message.channel.sendMessage( message.author.name+" has loaded the gun!");
-		loader = message.author.name;
+		reloader = message.author.name;
 	}
 	else if (message.content.toLowerCase()===("\\rr")){
 		var shot = (Math.floor(Math.random()*6)==1)
 		if (shot){
-			message.reply("you spin the revolver...\n\n "+message.author.name+" has died by "+loader+"'s bullet. Reloading.");
-			loader = message.author.name;
+			message.reply("you spin the revolver...\n\n "+message.author.username+" has died by "+reloader+"'s bullet. Reloading.");
+			reloader = message.author.username;
 		}
 		else message.reply("you spin the revolver...\n\nyou survived.");
 	}
