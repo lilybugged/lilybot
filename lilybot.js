@@ -253,25 +253,25 @@ bot.on("message",function(message){
 		}
 	}
 	else if(message.content===("\\setupgamble")){
-		setupgamble(message.content.split(" ")[1]);
+		setupgamble(""+message.author);
 	}
 	else if(message.content===("\\loot")){
-		loot(message.author);
+		loot(""+message.author);
 	}
 	else if(message.content.substring(0,11)===("\\transferin")){
-		transferin(message.author, message.content.substring(12));
+		transferin(""+message.author, message.content.substring(12));
 	}
 	else if(message.content.substring(0,12)===("\\transferout")){
-		transferout(message.author, message.content.substring(13));
+		transferout(""+message.author, message.content.substring(13));
 	}
 	else if(message.content.substring(0,11)===("\\transferto")){
-		transferto(message.author, message.content.split(" ")[1], message.content.split(" ")[2]);
+		transferto(""+message.author, message.content.split(" ")[1], message.content.split(" ")[2]);
 	}
 	else if(message.content===("\\help monies")){
 		send("```behold, th monie cmds:\n\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\duel <user>\n\\help monies```");
 	}
 	else if(message.content.split(" ")[0]===("\\duel")){
-		duel(message.author,message.content.split(" ")[1]);
+		duel(""+message.author,message.content.split(" ")[1]);
 	}
 	
 	
@@ -632,8 +632,8 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("\\rr")){
 		var shot = (Math.floor(Math.random()*6)==1)
 		if (shot){
-			message.reply("you spin the revolver...\n\n "+message.author.username+" has died by "+reloader+"'s bullet. Reloading.");
-			reloader = message.author.username;
+			message.reply("you spin the revolver...\n\n "+message.author+" has died by "+reloader+"'s bullet. Reloading.");
+			reloader = message.author;
 		}
 		else message.reply("you spin the revolver...\n\nyou survived.");
 	}
