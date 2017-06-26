@@ -632,8 +632,8 @@ bot.on("message",function(message){
 	else if (message.content.toLowerCase()===("\\rr")){
 		var shot = (Math.floor(Math.random()*6)==1)
 		if (shot){
-			message.reply("you spin the revolver...\n\n "+message.author+" has died by "+reloader+"'s bullet. Reloading.");
-			reloader = message.author;
+			message.reply("you spin the revolver...\n\n "+mention(message.author)+" has died by "+reloader+"'s bullet. Reloading.");
+			reloader = mention(message.author);
 		}
 		else message.reply("you spin the revolver...\n\nyou survived.");
 	}
