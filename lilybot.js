@@ -802,7 +802,7 @@ bot.on("message",function(message){
 		if (mess.length<3){
 			message.reply("Incorrect format. Use a number from 1-9 and either ':damnDavid:' or 'O'.");
 		}
-		else if (mess[1]<1 || mess[1]>9 || (mess[2].toLowerCase()!=":damnDavid:"&&mess[2].toLowerCase()!="o")){
+		else if (mess[1]<1 || mess[1]>9 || (mess[2]!=":damnDavid:"&&mess[2].toLowerCase()!="o")){
 			message.reply("Incorrect format. Use a number from 1-9 and either ':damnDavid:' or 'O'.");
 		}
 		else{
