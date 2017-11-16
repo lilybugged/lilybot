@@ -807,7 +807,7 @@ bot.on("message",function(message){
 		}
 		else{
 		//catch err
-			if (server_last[id]===mess[2]) message.reply("You can't place an "+((server_last[id]==="o")? ":o:":bot.emojis.find("name", "DamnDavid").toString())+" twice in a row! Try again.");
+			if (server_last[id]===mess[2]) message.reply("You can't place a"+((server_last[id]==="o")? "n :o:":" "+bot.emojis.find("name", "DamnDavid").toString())+" twice in a row! Try again.");
 		//place it
 			switch(parseInt(mess[1])){
 				case 1:
@@ -862,7 +862,7 @@ bot.on("message",function(message){
 			for (i=0;i<3;i++){
 				for (a=0;a<3;a++){
 					if (serverboards[id][i][a]==="o") board[i][a] = ":o:";
-					else if (serverboards[id][i][a]===":DamnDavid:") board[i][a] = ":DamnDavid:";
+					else if (serverboards[id][i][a]===bot.emojis.find("name", "DamnDavid").toString()) board[i][a] = bot.emojis.find("name", "DamnDavid").toString();
 					str+=board[i][a];
 				}
 				str+="\n";
@@ -873,7 +873,7 @@ bot.on("message",function(message){
 			//rows
 			for (i = 0;i<3;i++){
 				if (win) break;
-				if (serverboards[id][i].toString()==[":DamnDavid:",":DamnDavid:",":DamnDavid:"].toString()||serverboards[id][i].toString()==["o","o","o"].toString()){
+				if (serverboards[id][i].toString()==[bot.emojis.find("name", "DamnDavid").toString(),bot.emojis.find("name", "DamnDavid").toString(),bot.emojis.find("name", "DamnDavid").toString()].toString()||serverboards[id][i].toString()==["o","o","o"].toString()){
 					winner(mess[2]);
 					win = true;
 					break;
@@ -897,12 +897,12 @@ bot.on("message",function(message){
 			}
 			
 			//diagonal
-			if (!win && ((serverboards[id][0][0]===":DamnDavid:"&&serverboards[id][1][1]===":DamnDavid:"&&serverboards[id][2][2]===":DamnDavid:")||
+			if (!win && ((serverboards[id][0][0]===bot.emojis.find("name", "DamnDavid").toString()&&serverboards[id][1][1]===bot.emojis.find("name", "DamnDavid").toString()&&serverboards[id][2][2]===bot.emojis.find("name", "DamnDavid").toString())||
 			(serverboards[id][0][0]==="o"&&serverboards[id][1][1]==="o"&&serverboards[id][2][2]==="o"))){
 				winner(mess[2]);
 				win = true;
 			}
-			else if (!win && ((serverboards[id][0][2]===":DamnDavid:"&&serverboards[id][1][1]===":DamnDavid:"&&serverboards[id][2][0]===":DamnDavid:")||
+			else if (!win && ((serverboards[id][0][2]===bot.emojis.find("name", "DamnDavid").toString()&&serverboards[id][1][1]===bot.emojis.find("name", "DamnDavid").toString()&&serverboards[id][2][0]===bot.emojis.find("name", "DamnDavid").toString())||
 			(serverboards[id][0][2]==="o"&&serverboards[id][1][1]==="o"&&serverboards[id][2][0]==="o"))){
 				winner(mess[2]);
 				win = true;
