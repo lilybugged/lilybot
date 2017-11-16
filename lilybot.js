@@ -172,7 +172,7 @@ bot.on("message",function(message){
 	};
 	duel = function(user,touser){
 			if (users.includes(user)&&users.includes(touser)){
-				if (monies[users.indexOf(user)]>=1&&monies[users.indexOf(touser)]>=1){
+				if (monies[users.indexOf(user)]>=1000&&monies[users.indexOf(touser)]>=1000){
 					if(Math.floor(Math.random()*2)==0){
 						var prize = Math.floor((Math.random()*((monies[users.indexOf(user)]/monies[users.indexOf(touser)]>1)?1:monies[users.indexOf(user)]/monies[users.indexOf(touser)]))*monies[users.indexOf(touser)]);
 						monies[users.indexOf(user)]+=prize;
@@ -180,13 +180,13 @@ bot.on("message",function(message){
 						send("You have Succeeded!\n\nYou have gained "+prize+" of "+touser+"\'s monies.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
 					}
 					else{
-						//monies[users.indexOf(touser)]+=monies[users.indexOf(user)];
+						monies[users.indexOf(touser)]+=monies[users.indexOf(user)];
 						monies[users.indexOf(user)]=0;
 						send("You have been utterly defeated!\n\nYou have lost all of your monies. All of them.\n\nYour monies is now: "+monies[users.indexOf(user)]+"\n"+touser+"\'s monies is now: "+monies[users.indexOf(touser)]);
 					}
 				}
 				else{
-					send("Someone doesn\'t have enough monies to complete this operation. Dueling requires a minimum of 1 monies.");
+					send("Someone doesn\'t have enough monies to complete this operation. Dueling requires a minimum of 1000 monies.");
 				}
 			}
 			else{
@@ -253,25 +253,25 @@ bot.on("message",function(message){
 		}
 	}
 	else if(message.content===("\\setupgamble")){
-		setupgamble(""+message.author);
+		setupgamble(message.author.username);
 	}
 	else if(message.content===("\\loot")){
-		loot(""+message.author);
+		loot(message.author.username);
 	}
 	else if(message.content.substring(0,11)===("\\transferin")){
-		transferin(""+message.author, message.content.substring(12));
+		transferin(message.author.username, message.content.substring(12));
 	}
 	else if(message.content.substring(0,12)===("\\transferout")){
-		transferout(""+message.author, message.content.substring(13));
+		transferout(message.author.username, message.content.substring(13));
 	}
 	else if(message.content.substring(0,11)===("\\transferto")){
-		transferto(""+message.author, message.content.split(" ")[1], message.content.split(" ")[2]);
+		transferto(message.author.username, message.content.split(" ")[1], message.content.split(" ")[2]);
 	}
 	else if(message.content===("\\help monies")){
 		send("```behold, th monie cmds:\n\n\\gamble <num>\n\\profile <user>\n\\setupgamble\n\\loot\n\\transferin <num>\n\\transferout <num>\n\\transferto <user> <num>\n\\duel <user>\n\\help monies```");
 	}
 	else if(message.content.split(" ")[0]===("\\duel")){
-		duel(""+message.author,message.content.split(" ")[1]);
+		duel(message.author.username,message.content.split(" ")[1]);
 	}
 	
 	
@@ -557,7 +557,7 @@ bot.on("message",function(message){
 		}
 	}
 	else if (message.content.substring(0,3)=="\\js"){
-		if ((message.author.username=="lily"||message.author.username=="lilybot")&&!message.content.includes("while(")&&!message.content.includes("while (")&&!message.content.includes("for (")&&!message.content.includes("for(")){
+		if ((message.author.username=="lily"||message.author.username=="lilybot"||message.author.username=="Pie"||message.author.username=="Derrick")&&!message.content.includes("while(")&&!message.content.includes("while (")&&!message.content.includes("for (")&&!message.content.includes("for(")){
 			try{
 				message.channel.sendMessage(eval(message.content.substring(3)));
 			}
@@ -627,13 +627,13 @@ bot.on("message",function(message){
 	}
 	else if (message.content.toLowerCase()===("\\reload")){
 		message.channel.sendMessage( message.author.name+" has loaded the gun!");
-		reloader = message.author.name;
+		loader = message.author.name;
 	}
 	else if (message.content.toLowerCase()===("\\rr")){
 		var shot = (Math.floor(Math.random()*6)==1)
 		if (shot){
-			message.reply("you spin the revolver...\n\n "+mention(message.author)+" has died by "+reloader+"'s bullet. Reloading.");
-			reloader = mention(message.author);
+			message.reply("you spin the revolver...\n\n "+message.author.name+" has died by "+loader+"'s bullet. Reloading.");
+			loader = message.author.name;
 		}
 		else message.reply("you spin the revolver...\n\nyou survived.");
 	}
