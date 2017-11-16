@@ -800,14 +800,14 @@ bot.on("message",function(message){
 		
 		var mess = message.content.split(" ");
 		if (mess.length<3){
-			message.reply("Incorrect format. Use a number from 1-9 and either 'X' or 'O'.");
+			message.reply("Incorrect format. Use a number from 1-9 and either ':damnDavid:' or 'O'.");
 		}
-		else if (mess[1]<1 || mess[1]>9 || (mess[2].toLowerCase()!="x"&&mess[2].toLowerCase()!="o")){
-			message.reply("Incorrect format. Use a number from 1-9 and either 'X' or 'O'.");
+		else if (mess[1]<1 || mess[1]>9 || (mess[2].toLowerCase()!=":damnDavid:"&&mess[2].toLowerCase()!="o")){
+			message.reply("Incorrect format. Use a number from 1-9 and either ':damnDavid:' or 'O'.");
 		}
 		else{
 		//catch err
-			if (server_last[id]===mess[2]) message.reply("You can't place an "+((server_last[id]==="o")? ":o:":":x:")+" twice in a row! Try again.");
+			if (server_last[id]===mess[2]) message.reply("You can't place an "+((server_last[id]==="o")? ":o:":":damnDavid:")+" twice in a row! Try again.");
 		//place it
 			switch(parseInt(mess[1])){
 				case 1:
@@ -862,7 +862,7 @@ bot.on("message",function(message){
 			for (i=0;i<3;i++){
 				for (a=0;a<3;a++){
 					if (serverboards[id][i][a]==="o") board[i][a] = ":o:";
-					else if (serverboards[id][i][a]==="x") board[i][a] = ":x:";
+					else if (serverboards[id][i][a]===":damnDavid:") board[i][a] = ":damnDavid:";
 					str+=board[i][a];
 				}
 				str+="\n";
@@ -873,7 +873,7 @@ bot.on("message",function(message){
 			//rows
 			for (i = 0;i<3;i++){
 				if (win) break;
-				if (serverboards[id][i].toString()==["x","x","x"].toString()||serverboards[id][i].toString()==["o","o","o"].toString()){
+				if (serverboards[id][i].toString()==[":damnDavid:",":damnDavid:",":damnDavid:"].toString()||serverboards[id][i].toString()==["o","o","o"].toString()){
 					winner(mess[2]);
 					win = true;
 					break;
@@ -897,12 +897,12 @@ bot.on("message",function(message){
 			}
 			
 			//diagonal
-			if (!win && ((serverboards[id][0][0]==="x"&&serverboards[id][1][1]==="x"&&serverboards[id][2][2]==="x")||
+			if (!win && ((serverboards[id][0][0]===":damnDavid:"&&serverboards[id][1][1]===":damnDavid:"&&serverboards[id][2][2]===":damnDavid:")||
 			(serverboards[id][0][0]==="o"&&serverboards[id][1][1]==="o"&&serverboards[id][2][2]==="o"))){
 				winner(mess[2]);
 				win = true;
 			}
-			else if (!win && ((serverboards[id][0][2]==="x"&&serverboards[id][1][1]==="x"&&serverboards[id][2][0]==="x")||
+			else if (!win && ((serverboards[id][0][2]===":damnDavid:"&&serverboards[id][1][1]===":damnDavid:"&&serverboards[id][2][0]===":damnDavid:")||
 			(serverboards[id][0][2]==="o"&&serverboards[id][1][1]==="o"&&serverboards[id][2][0]==="o"))){
 				winner(mess[2]);
 				win = true;
