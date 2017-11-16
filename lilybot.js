@@ -209,7 +209,7 @@ bot.on("message",function(message){
 		}
 		
 		server_last[id] = 0;
-		message.reply(":"+which+": has won! the board has been reset.");
+		message.reply(which+" has won! the board has been reset.");
 	}
 	//4:20
 	if (((d = new Date()).getHours() == 4 && (d = new Date()).getMinutes() == 20) || ((d = new Date()).getHours() == 16 && (d = new Date()).getMinutes() == 20)){
