@@ -800,14 +800,14 @@ bot.on("message",function(message){
 		
 		var mess = message.content.split(" ");
 		if (mess.length<3){
-			message.reply("Incorrect format. Use a number from 1-9 and either ':damnDavid:' or 'O'.");
+			message.reply("Incorrect format. Use a number from 1-9 and either '"+client.emojis.find("name", "damnDavid")+"' or 'O'.");
 		}
 		else if (mess[1]<1 || mess[1]>9 || (mess[2]!=":damnDavid:"&&mess[2].toLowerCase()!="o")){
 			message.reply("Incorrect format. Use a number from 1-9 and either ':damnDavid:' or 'O'.");
 		}
 		else{
 		//catch err
-			if (server_last[id]===mess[2]) message.reply("You can't place an "+((server_last[id]==="o")? ":o:":":damnDavid:")+" twice in a row! Try again.");
+			if (server_last[id]===mess[2]) message.reply("You can't place an "+((server_last[id]==="o")? ":o:":client.emojis.find("name", "damnDavid"))+" twice in a row! Try again.");
 		//place it
 			switch(parseInt(mess[1])){
 				case 1:
